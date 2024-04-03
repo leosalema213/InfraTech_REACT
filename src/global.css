@@ -3,5 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+}
 
+img.rounded {
+  max-height: 140px;
+  max-width: 140px;
+  border-radius: 50%;
 }
