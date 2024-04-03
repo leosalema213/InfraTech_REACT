@@ -11,7 +11,10 @@ export type HeadingProps = {
   bordercolor?: string
 }
 
-const Heading = ({ level, children, content, headingalign, headingcolor, bordercolor }: HeadingProps) => {
+const Heading = ({
+  level, children, content,
+  headingalign, headingcolor, bordercolor
+}: HeadingProps) => {
   const headingTags = {
     1: S.H1,
     2: S.H2,
@@ -19,12 +22,26 @@ const Heading = ({ level, children, content, headingalign, headingcolor, borderc
   }
   const HeadingTag = headingTags[level!]
 
-  return <HeadingTag bordercolor={bordercolor} headingcolor={headingcolor} headingalign={headingalign}>{children || content}</HeadingTag>
+  return (
+    <HeadingTag
+      bordercolor={bordercolor}
+      headingcolor={headingcolor}
+      headingalign={headingalign}>
+        {children || content}
+    </HeadingTag>
+  )
 }
 
-export const HeadingSection = ({ children, content, headingbgcolor, headingalign, headingcolor, bordercolor }: HeadingProps) => {
+export const HeadingSection = ({ 
+  children, content, headingbgcolor,
+  headingalign, headingcolor, bordercolor
+}: HeadingProps) => {
   return (
-    <S.SectionTitle bordercolor={bordercolor} headingcolor={headingcolor} headingalign={headingalign} headingbgcolor={headingbgcolor} >
+    <S.SectionTitle 
+    bordercolor={bordercolor} 
+    headingcolor={headingcolor} 
+    headingalign={headingalign} 
+    headingbgcolor={headingbgcolor}>
       {children || content}
     </S.SectionTitle>
   )

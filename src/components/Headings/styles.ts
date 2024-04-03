@@ -9,7 +9,6 @@ const Heading = styled.div<HeadingProps>`
   font-size: 1em;
   text-align: ${(props) =>
     props.headingalign != undefined ? props.headingalign : 'start'};
-
 `
 
 export const H1 = styled(Heading).attrs({ as: 'h1' })`
@@ -21,7 +20,7 @@ export const H2 = styled(Heading).attrs({ as: 'h2' })`
   font-size: 1.3em;
 `
 export const H3 = styled(Heading).attrs({ as: 'h3' })`
-font-size: 1.2em;
+  font-size: 1.2em;
 `
 
 export const SectionTitle = styled(H2)<HeadingProps>`

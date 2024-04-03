@@ -17,6 +17,7 @@ import Btn, { BtnHome } from './components/Button'
 import SocialBar, { ISocial } from './components/SocialBar'
 import Section from './components/Section'
 
+import { TbDiscount2 } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -25,6 +26,7 @@ import Border from './components/Border'
 import Form from './components/Form'
 import InputGroup from './components/InputGroup'
 import Select from './components/Select'
+import { FooterContainer } from './components/Footer/styles'
 
 
 
@@ -141,12 +143,15 @@ function App() {
       </Section>
 
       <HeadingSection level={2} headingbgcolor='#421eaa' headingalign='center'>
+        <TbDiscount2 color="#00a2ff" size="22px" />
         Desconto disponivel por
       </HeadingSection>
+
       <Form>
         <Heading level={3} headingcolor='#000'>
           Garanta ja sua vaga
         </Heading>
+
         <Border bordercolor='#00a2ff' />
 
         <InputGroup label="Nome" inputname="nome" inputtype="text" color="#00a2ff" />
@@ -159,8 +164,13 @@ function App() {
           <option value="teste">Desenvolvedor Full Stack Java</option>
           <option value="teste">UX/UI Designer</option>
         </Select>
+        
         <Btn type="submit" width='100'>Enviar</Btn>
       </Form >
+
+      <FooterContainer bgcolor='#421eaa'>
+        teste
+      </FooterContainer>
     </>
   )
 }
