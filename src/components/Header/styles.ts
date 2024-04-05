@@ -12,6 +12,15 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media (min-width: 600px) {
+    font-size: 22px;
+    width: 100%;
+    ul {
+      top: 0;
+      right: 20px;
+    }
+  }
+
   &::after {
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;

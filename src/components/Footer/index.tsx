@@ -10,7 +10,9 @@ export type Props = {
 const Footer = ({bgcolor, textcolor, children}: Props) => {
   return (
     <FooterContainer bgcolor={bgcolor} textcolor={textcolor}>
-      {children}
+      <div>
+        {children}
+      </div>
     </FooterContainer>
   )
 }
