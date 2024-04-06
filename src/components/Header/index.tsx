@@ -2,7 +2,7 @@ import * as S from "./styles"
 import { ReactNode } from "react";
 
 export type props = {
-  background: ReactNode;
+  background?: ReactNode;
   children: ReactNode;
 }
 

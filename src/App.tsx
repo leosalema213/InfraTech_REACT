@@ -1,6 +1,6 @@
 import { TbDiscount2 } from "react-icons/tb";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
+import { Parallax } from "react-parallax";
 
 import Header from './components/Header'
 import Heading, { HeadingSection } from './components/Headings'
@@ -16,7 +16,6 @@ import course3 from './assets/section/courseFull.png'
 import course4 from './assets/section/courseUxUi.png'
 
 import Border from './components/Border'
-import Btn, { BtnHome } from './components/Button'
 import SocialBar, { ISocial } from './components/SocialBar'
 import Container from './components/Container'
 import Section from './components/Section'
@@ -26,6 +25,7 @@ import Form from './components/Form'
 import InputGroup from './components/InputGroup'
 import Select from './components/Select'
 import Footer from "./components/Footer";
+import Btn from "./components/Button";
 
 
 import { GlobalCss } from "./styles";
@@ -45,25 +45,35 @@ const sociallist: ISocial[] = [
 
 
 function App() {
+
+  const handleScroll = () => {
+    if (document.documentElement.scrollTop > 430) {
+      console.log("maior")
+    }
+  }
+  handleScroll()
   return (
     <>
       <GlobalCss />
-      <Header background={backgroundHome}>
-        <p style={{ color: '#00a2ff', zIndex: '1' }}>Formação online</p>
-        <Heading level={1} content="Cursos Infratech" headingalign='center' />
-        <Heading level={2} headingalign='center'>
-          Cursos profissinalizantes para o seu crescimento profissional.
-        </Heading>
-        <BtnHome type='button'>
-          Inscreva-se
-        </BtnHome>
-        <SocialBar socialList={sociallist} />
-        <div className="animatedArrowContainer">
-          <IoIosArrowDown color="#fff" />
-          <IoIosArrowDown color="#fff" />
-          <IoIosArrowDown color="#fff" />
-        </div>
-      </Header>
+      <Parallax bgImage={backgroundHome} strength={500}>
+        <Header >
+
+          <p style={{ color: '#00a2ff', zIndex: '1' }}>Formação online</p>
+          <Heading level={1} content="Cursos Infratech" headingalign='center' />
+          <Heading level={2} headingalign='center'>
+            Cursos profissinalizantes para o seu crescimento profissional.
+          </Heading>
+          <Btn
+            p="2"
+            txtcolor="#00a2ff"
+            bgcolor="tranparent"
+            bordercolor="#00a2ff"
+            content="Inscreva-se"
+            animated="2"
+            />
+          <SocialBar socialList={sociallist} />
+        </Header>
+      </Parallax>
 
       <HeadingSection headingbgcolor="#421eaa" headingalign='center'>
         Conheça mais a Infratech
@@ -161,7 +171,7 @@ function App() {
 
       <Section> {/* Form */}
         <div className="container">
-          <Form>
+          <Form >
             <Heading level={3} headingcolor='#000'>
               Garanta ja sua vaga
             </Heading>
@@ -178,8 +188,13 @@ function App() {
               <option value="teste">Desenvolvedor Full Stack Java</option>
               <option value="teste">UX/UI Designer</option>
             </Select>
-
-            <Btn type="submit" width='100'>Enviar</Btn>
+            <Btn
+            p="2"
+            txtcolor="#fff"
+            bgcolor="#00a2ff"
+            bordercolor="#00a2ff"
+            content="Inscreva-se"
+            />
           </Form >
         </div >
       </Section>

@@ -10,4 +10,8 @@ export const Formulario = styled.form`
     max-width: 100%;
     padding: 30px 80px 60px;
   }
+
+  @media (min-width: 900px) {
+    padding: 30px 200px 60px;
+  }
 `

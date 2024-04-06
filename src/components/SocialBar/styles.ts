@@ -8,10 +8,12 @@ export const Ul = styled.ul`
   gap: 12px;
   position: absolute;
   bottom: 5.6vw;
+
 `
 export const Li = styled.li`
   color: #fff;
   list-style: none;
+  
 
   &:hover {
     transform: scale(1.2);

@@ -8,7 +8,7 @@ export type Props = {
 
 const Form = ({children}: Props) => {
   return(
-    <S.Formulario>
+    <S.Formulario >
       {children}
     </S.Formulario>
   )

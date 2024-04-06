@@ -32,35 +32,4 @@ export const GlobalCss = createGlobalStyle`
     }
   }
   
-  .animatedArrowContainer {
-    z-index: 1;
-    position: absolute;
-    bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    animation: floating 1s linear infinite;animation: floating 1s linear infinite;
-
-    svg {
-      width: 34px;
-      height: 34px;
-      margin-bottom: -24px;
-    }
-
-    @media (min-width: 900px) {
-      display: none;
-    }
-  }
-
-
-  @keyframes floating {
-    from {
-      transform: translateY(0px);
-    }
-
-    to {
-      transform: translateY(4px);
-    }
-  }
-
-
 `

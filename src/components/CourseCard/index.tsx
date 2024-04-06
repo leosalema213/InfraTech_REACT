@@ -12,7 +12,7 @@ export type Props = {
 }
 
 const CourseCard = ({
-  coursename, imageurl, description, buttontext, orientation
+  coursename, imageurl, description, orientation
 }: Props) => {
   return (
     <S.Card>
@@ -26,7 +26,15 @@ const CourseCard = ({
         <img src={imageurl} alt="" />
         <div>
           <p> {description}</p> 
-          <Btn type="button">{buttontext}</Btn>
+          <Btn
+            p="1"
+            txtcolor="#fff"
+            bgcolor="#00a2ff"
+            bordercolor="#00a2ff"
+            content="Inscreva-se"
+            animated="1"
+            rounded="1"
+            />
         </div>
       </S.CardContainer>
     </S.Card>
