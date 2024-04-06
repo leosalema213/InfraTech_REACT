@@ -11,14 +11,16 @@ export const HeaderContainer = styled.div`
   padding: 5.6vw;
   align-items: center;
   justify-content: center;
+  position: relative;
+
+  ul {
+    top: 24px; 
+    right: 12px;
+  }
 
   @media (min-width: 600px) {
     font-size: 22px;
     width: 100%;
-    ul {
-      top: 0;
-      right: 20px;
-    }
   }
 
   &::after {

@@ -7,6 +7,7 @@ export const Formulario = styled.form`
   gap: 10px;
   
   @media (min-width: 600px) {
-    max-width: 600px;
+    max-width: 100%;
+    padding: 30px 80px 60px;
   }
 `

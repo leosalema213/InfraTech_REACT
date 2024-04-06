@@ -8,9 +8,7 @@ export type Props = {
 const Section = ({ children }: Props) => {
   return (
     <S.Section >
-      <div>
         {children}
-      </div>
     </S.Section>
   )
 }

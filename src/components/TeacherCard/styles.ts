@@ -10,10 +10,21 @@ margin-bottom: 20px;
 padding: 12px;
 box-shadow: 0px 0px 8px rgba(0,0,0,.4196078431);
 
+@media (max-width: 900px) {
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+}
+
 img {
-  width: 100%;
-  height: 280px;
   margin-bottom: 8px;
+  width: 100%;
+  max-height: 140px;
+  max-width: 140px;
+  border-radius: 50%;
 }
 
 p {

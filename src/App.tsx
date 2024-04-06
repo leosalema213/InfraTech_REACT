@@ -1,4 +1,6 @@
-import './global.css'
+import { TbDiscount2 } from "react-icons/tb";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 
 import Header from './components/Header'
 import Heading, { HeadingSection } from './components/Headings'
@@ -13,22 +15,20 @@ import course2 from './assets/section/courseBack.png'
 import course3 from './assets/section/courseFull.png'
 import course4 from './assets/section/courseUxUi.png'
 
+import Border from './components/Border'
 import Btn, { BtnHome } from './components/Button'
 import SocialBar, { ISocial } from './components/SocialBar'
-import Section from './components/Section'
-
-import { TbDiscount2 } from "react-icons/tb";
-import { FaGithub } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 import Container from './components/Container'
-import Border from './components/Border'
+import Section from './components/Section'
+import TeacherCard from './components/TeacherCard'
+import CourseCard from './components/CourseCard'
 import Form from './components/Form'
 import InputGroup from './components/InputGroup'
 import Select from './components/Select'
-import { FooterContainer } from './components/Footer/styles'
-import TeacherCard from './components/TeacherCard'
-import CourseCard from './components/CourseCard'
+import Footer from "./components/Footer";
+
+
+import { GlobalCss } from "./styles";
 
 
 
@@ -36,10 +36,6 @@ const sociallist: ISocial[] = [
   {
     url: "1",
     icon: FaGithub
-  },
-  {
-    url: "2",
-    icon: FaInstagram,
   },
   {
     url: "3",
@@ -51,7 +47,7 @@ const sociallist: ISocial[] = [
 function App() {
   return (
     <>
-
+      <GlobalCss />
       <Header background={backgroundHome}>
         <p style={{ color: '#00a2ff', zIndex: '1' }}>Formação online</p>
         <Heading level={1} content="Cursos Infratech" headingalign='center' />
@@ -62,6 +58,11 @@ function App() {
           Inscreva-se
         </BtnHome>
         <SocialBar socialList={sociallist} />
+        <div className="animatedArrowContainer">
+          <IoIosArrowDown color="#fff" />
+          <IoIosArrowDown color="#fff" />
+          <IoIosArrowDown color="#fff" />
+        </div>
       </Header>
 
       <HeadingSection headingbgcolor="#421eaa" headingalign='center'>
@@ -69,21 +70,21 @@ function App() {
       </HeadingSection>
 
       <Section> {/* About */}
-        <Container>
+        <div className="container">
           <Heading level={2} headingcolor='#000' bordercolor='#00a2ff'>Sobre nós </Heading>
           <Border bordercolor='#00a2ff' />
-          <Container display='flex'>
+          <Container>
             <img src={aboutimage} alt="" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error omnis vitae veritatis beatae quibusdam ex aperiam. Architecto reiciendis asperiores odit harum, praesentium libero quibusdam possimus! Eniitatis beatae quibusdam ex aperiam,rum, praesentium libero quibusdam possimus! Eniitatis beatae quibusdam ex aperiam.
             </p>
           </Container>
-        </Container>
+        </div>
 
       </Section>
 
       <Section> {/* teachers */}
-        <Container>
+        <div className="container">
           <HeadingSection headingalign="center" headingbgcolor='#00a2ff'  >
             Nossos Professores
           </HeadingSection>
@@ -113,11 +114,11 @@ function App() {
               description="Olá eu sou o Leonardo tenho 21 anos, lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!"
             />
           </Container>
-        </Container>
+        </div>
       </Section>
 
       <Section> {/* courses */}
-        <Container>
+        <div className="container">
           <HeadingSection headingalign="center" headingbgcolor='#00a2ff'  >
             Nossos Cursos
           </HeadingSection>
@@ -150,7 +151,7 @@ function App() {
             buttontext='Saiba mais'
             orientation='reverse'
           />
-        </Container>
+        </div>
       </Section>
 
       <HeadingSection level={2} headingbgcolor='#421eaa' headingalign='center'>
@@ -159,7 +160,7 @@ function App() {
       </HeadingSection>
 
       <Section> {/* Form */}
-        <Container display='flex'>
+        <div className="container">
           <Form>
             <Heading level={3} headingcolor='#000'>
               Garanta ja sua vaga
@@ -180,12 +181,12 @@ function App() {
 
             <Btn type="submit" width='100'>Enviar</Btn>
           </Form >
-        </Container>
+        </div >
       </Section>
 
-      <FooterContainer bgcolor='#421eaa'>
+      <Footer bgcolor='#421eaa'>
         <p>© Todos os direitos reservados</p>
-      </FooterContainer>
+      </Footer>
     </>
   )
 }

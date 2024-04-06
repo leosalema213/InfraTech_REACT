@@ -2,15 +2,12 @@ import styled from 'styled-components'
 
 export const Ul = styled.ul`
   display: flex;
+  flex-direction: column;
+  justify-content: start;
   z-index: 1;
-  gap: 20px;
+  gap: 12px;
   position: absolute;
   bottom: 5.6vw;
-  align-items: center;
-  justify-content: center;
-  
-  @media (min-width: 600px) {
-    flex-direction: column;
 `
 export const Li = styled.li`
   color: #fff;

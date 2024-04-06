@@ -2,32 +2,27 @@ import { ReactNode } from "react"
 import * as S from "./styles"
 
 export type Props = {
-  display?: "flex" | "grid"
+  display?: "grid"
   gridrepeat?: "1" | "2" | "3" | "4"
-  children: ReactNode
+  children?: ReactNode
 }
 
 const Container = ({ children, display, gridrepeat }: Props) => {
-  switch(display) {
-    case 'flex':
-      return (
-        <S.ContainerFlex  display={display}>
-            {children}
-        </S.ContainerFlex>
-      )
-    case 'grid':
-      return (
-        <S.ContainerGrid gridrepeat={gridrepeat} display={display}>
-            {children}
-        </S.ContainerGrid>
-      )
-    default:
-      return (
-        <S.Container display={display}>
-            {children}
-        </S.Container>
-      )
+
+  if (display == "grid") {
+    return (
+      <S.ContainerGrid gridrepeat={gridrepeat} display={display}>
+        {children}
+      </S.ContainerGrid>
+    )
   }
+
+  return (
+    <S.ContainerFlex>
+      {children}
+    </S.ContainerFlex>
+  )
+
 }
 
 export default Container
