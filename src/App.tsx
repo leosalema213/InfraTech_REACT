@@ -69,7 +69,7 @@ function App() {
             bgcolor="tranparent"
             bordercolor="#00a2ff"
             content="Inscreva-se"
-            animated="2"
+            animated={true}
             />
           <SocialBar socialList={sociallist} />
         </Header>
@@ -194,6 +194,8 @@ function App() {
             bgcolor="#00a2ff"
             bordercolor="#00a2ff"
             content="Inscreva-se"
+            width="100%"
+            type="submit"
             />
           </Form >
         </div >

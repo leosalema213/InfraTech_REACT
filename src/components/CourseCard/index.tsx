@@ -32,7 +32,6 @@ const CourseCard = ({
             bgcolor="#00a2ff"
             bordercolor="#00a2ff"
             content="Inscreva-se"
-            animated="1"
             rounded="1"
             />
         </div>

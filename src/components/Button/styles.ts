@@ -3,8 +3,9 @@ import { Props } from '.'
 
 export const Btn = styled.a<Props>`
   text-transform: uppercase;
+  text-align: center;
   font-weight: bold;
-  width: ${(props) => props.width && props.width};
+  width: ${(props) => props.width && "100%"};
   padding: ${(props) => (props.p == '2' ? ' 9px 32px' : '8px 16px')};
   color: ${(props) => (props.txtcolor ? props.txtcolor : '#000')};
   border: ${(props) =>
@@ -18,10 +19,14 @@ export const Btn = styled.a<Props>`
   display: inline-block;
 
   &:hover {
-    transform: ${(props) => props.animated == '1' && 'scale(1.05)'};
+    transform: ${(props) => !props.animated && 'translateY(-3px)'};
     background-color: ${(props) =>
-      props.animated == "2" && props.bordercolor};
+      props.animated && props.bordercolor};
     transition: all ease .8s;
     color: #fff;
   }
+`
+
+export const BtnSubmit = styled(Btn).attrs({ as: 'button' }) `
+  font-size: 1em;
 `

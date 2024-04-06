@@ -2,26 +2,36 @@ import { ReactNode } from 'react'
 import * as S from './styles'
 
 export type Props = {
-  children?: ReactNode;
-  width?: '100';
+  width?: string;
   type?: "button" | "submit";
   bgcolor?: string;
   bordercolor?: string;
   txtcolor?: string;
   p?: "1" | "2";
   rounded?: "1" | "2"
-  content?: string;
-  animated?: "1" | "2" 
+  content?: ReactNode;
+  animated?: boolean;
 }
 
 export const Btn = ({
-  children, content, p, txtcolor, bgcolor, bordercolor, rounded, animated
+  content, p, txtcolor, bgcolor, bordercolor, rounded, animated, width,type
 }: Props) => {
+
+  if(type) {
+    return <S.BtnSubmit
+    p={p} txtcolor={txtcolor} bgcolor={bgcolor} width={width}
+    bordercolor={bordercolor} rounded={rounded} animated={animated}
+    type={type}
+  >
+    {content}
+  </S.BtnSubmit>
+  } 
+
   return <S.Btn
-    p={p} txtcolor={txtcolor} bgcolor={bgcolor} 
+    p={p} txtcolor={txtcolor} bgcolor={bgcolor} width={width}
     bordercolor={bordercolor} rounded={rounded} animated={animated}
   >
-    {children || content}
+    {content}
   </S.Btn>
 
 }
