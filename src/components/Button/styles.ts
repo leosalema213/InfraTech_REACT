@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { Props } from '.'
 
-export const Btn = styled.a<Props>`
+export const Btn = styled.a.attrs({as: Link})<Props>`
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
@@ -17,6 +18,7 @@ export const Btn = styled.a<Props>`
   z-index: 1;
   margin-top: 30px;
   display: inline-block;
+  text-decoration: none;
 
   &:hover {
     transform: ${(props) => !props.animated && 'translateY(-3px)'};

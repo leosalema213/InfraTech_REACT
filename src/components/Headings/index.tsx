@@ -1,20 +1,20 @@
 import { ReactNode } from 'react'
 import * as S from './styles'
 
-export type HeadingProps = {
+export type Props = {
   level?: 1 | 2 | 3
   children?: ReactNode
-  content?: ReactNode
-  headingcolor?: string
-  headingbgcolor?: string
-  headingalign?: "center" | "end"
-  bordercolor?: string
+  content?: string
+  color?: string
+  bgcolor?: string
+  align?: "center" | "end"
+  fsize?: string;
 }
 
 const Heading = ({
   level, children, content,
-  headingalign, headingcolor, bordercolor
-}: HeadingProps) => {
+  align, color, fsize
+}: Props) => {
   const headingTags = {
     1: S.H1,
     2: S.H2,
@@ -24,24 +24,23 @@ const Heading = ({
 
   return (
     <HeadingTag
-      bordercolor={bordercolor}
-      headingcolor={headingcolor}
-      headingalign={headingalign}>
+      color={color}
+      align={align} fsize={fsize}>
         {children || content}
     </HeadingTag>
   )
 }
 
 export const HeadingSection = ({ 
-  children, content, headingbgcolor,
-  headingalign, headingcolor, bordercolor
-}: HeadingProps) => {
+  children, content, bgcolor,
+  align, color, fsize
+}: Props) => {
   return (
     <S.SectionTitle 
-    bordercolor={bordercolor} 
-    headingcolor={headingcolor} 
-    headingalign={headingalign} 
-    headingbgcolor={headingbgcolor}>
+    fsize={fsize}
+    color={color} 
+    align={align} 
+    bgcolor={bgcolor}>
       {children || content}
     </S.SectionTitle>
   )

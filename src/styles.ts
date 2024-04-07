@@ -32,4 +32,10 @@ export const GlobalCss = createGlobalStyle`
     }
   }
   
+  .animation {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+  }
+  
 `

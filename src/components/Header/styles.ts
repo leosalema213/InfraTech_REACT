@@ -1,17 +1,20 @@
 import styled from 'styled-components'
+import { Props } from '.'
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div<Props>`
   width: 100vw;
   height: 100vh;
+  background: ${(props) => props.background && props.background};
   background-position: center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
   padding: 5.6vw;
-  align-items: center;
-  justify-content: center;
+  align-items: ${(props) => props.align && props.align};
+  justify-content: ${(props) => props.justify && props.justify};
   position: relative;
+  
 
   ul {
     top: 24px; 
@@ -24,7 +27,8 @@ export const HeaderContainer = styled.div`
   }
 
   &::after {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 
+      ${(props) => props.after == "1" ? "0.4" :  "0.7" });
     position: absolute;
     width: 100%;
     height: 100%;

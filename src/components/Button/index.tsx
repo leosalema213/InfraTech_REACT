@@ -10,11 +10,12 @@ export type Props = {
   p?: "1" | "2";
   rounded?: "1" | "2"
   content?: ReactNode;
-  animated?: boolean;
+  animated?: "1";
+  to?: string;
 }
 
 export const Btn = ({
-  content, p, txtcolor, bgcolor, bordercolor, rounded, animated, width,type
+  content, p, txtcolor, bgcolor, bordercolor, rounded, animated, width,type,to
 }: Props) => {
 
   if(type) {
@@ -27,7 +28,7 @@ export const Btn = ({
   </S.BtnSubmit>
   } 
 
-  return <S.Btn
+  return <S.Btn to={to}
     p={p} txtcolor={txtcolor} bgcolor={bgcolor} width={width}
     bordercolor={bordercolor} rounded={rounded} animated={animated}
   >
