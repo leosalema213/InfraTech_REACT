@@ -32,14 +32,21 @@ const Accordion = ({
 
   return (
     <S.AccoridionContainer bordercolor={bordercolor} >
-      <S.AccordionHeader bgheadercolor={bgheadercolor} onClick={openAcordion} >
+      <S.AccordionHeader bgheadercolor={bgheadercolor} onClick={openAcordion} titlecolor={titlecolor} >
         <p>{title}</p>
-        <BiSolidDownArrow
-          size="20px"
-          className='iconOpen'
-          color={titlecolor} />
 
-        <IoMdClose size="24px" className='icons iconClose' color={titlecolor} />
+        {isActive == true
+          ? (<IoMdClose
+            size="24px"
+            className='icons iconClose'
+            color={titlecolor} />)
+          : (
+            <BiSolidDownArrow
+              size="20px"
+              className='iconOpen'
+              color={titlecolor} />
+          )}
+
       </S.AccordionHeader>
 
       {isActive && (

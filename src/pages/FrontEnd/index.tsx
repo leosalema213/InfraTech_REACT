@@ -7,6 +7,17 @@ import Card from "../../components/Card"
 import GridContainer from "../../components/GridContainer"
 import Accordion from "../../components/Accordion"
 
+const accordionsItem = [
+  {
+    title: "HTML / CSS",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
+  },
+  {
+    title: "JavaScript / jQuery",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
+  },
+]
+
 
 export const FrontEndPage = () => {
   return (
@@ -69,10 +80,13 @@ export const FrontEndPage = () => {
           Oque você ira aprender
         </HeadingSection>
 
-        <Accordion 
-        title="teste"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corpori"
-        />
+        {accordionsItem.map((item) => (
+          <Accordion
+            titlecolor="#552c65"
+            title={item.title}
+            content={item.content}
+          />
+        ))}
       </Section>
     </>
   )
