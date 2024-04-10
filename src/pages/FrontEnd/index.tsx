@@ -1,10 +1,12 @@
 import Header from "../../components/Header"
 import frontAnimation from "../../assets/animations/animationFrontEnd.svg"
 import P from "../../components/P"
-import Heading from "../../components/Headings"
+import Heading, { HeadingSection } from "../../components/Headings"
 import Section from "../../components/Section"
 import Card from "../../components/Card"
 import GridContainer from "../../components/GridContainer"
+import Accordion from "../../components/Accordion"
+
 
 export const FrontEndPage = () => {
   return (
@@ -61,6 +63,16 @@ export const FrontEndPage = () => {
             </P>
           </Card>
         </GridContainer>
+      </Section>
+      <Section>
+        <HeadingSection color="#552c65" align="center">
+          Oque você ira aprender
+        </HeadingSection>
+
+        <Accordion 
+        title="teste"
+        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corpori"
+        />
       </Section>
     </>
   )
