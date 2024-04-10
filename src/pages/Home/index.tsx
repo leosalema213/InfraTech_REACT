@@ -16,7 +16,6 @@ import course4 from '../../assets/section/courseUxUi.png'
 
 import Border from '../../components/Border'
 import SocialBar, { ISocial } from '../../components/SocialBar'
-import Container from '../../components/Container'
 import Section from '../../components/Section'
 import TeacherCard from '../../components/TeacherCard'
 import CourseCard from '../../components/CourseCard'
@@ -26,6 +25,8 @@ import Select from '../../components/Select'
 import Footer from "../../components/Footer";
 import Btn from "../../components/Button";
 import P from "../../components/P";
+import FlexContainer from "../../components/FlexContainer";
+import GridContainer from "../../components/GridContainer";
 
 
 
@@ -66,19 +67,19 @@ const Home = () => {
         align='center'
         content="Cursos profissinalizantes para o seu crescimento profissional."
       />
-      <Section> {/* About */}
+      <Section margin="40px 0"> {/* About */}
         <div className="container">
           <Heading
             level={2}
             color='#000'
             content="Sobre nós " />
           <Border bordercolor='#00a2ff' />
-          <Container>
+          <FlexContainer flexsm="column" flexmd="row">
             <img src={aboutimage} alt="" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error omnis vitae veritatis beatae quibusdam ex aperiam. Architecto reiciendis asperiores odit harum, praesentium libero quibusdam possimus! Eniitatis beatae quibusdam ex aperiam,rum, praesentium libero quibusdam possimus! Eniitatis beatae quibusdam ex aperiam.
             </p>
-          </Container>
+          </FlexContainer>
         </div>
 
       </Section>
@@ -91,7 +92,7 @@ const Home = () => {
             content="Nossos Professores" />
 
           <Border bordercolor='#00a2ff' />
-          <Container display='grid' gridrepeat='3'>
+          <GridContainer  gridmd='3' gap="20px">
 
 
             <TeacherCard
@@ -114,7 +115,7 @@ const Home = () => {
               profession="Desenvolvedor FrontEnd"
               description="Olá eu sou o Leonardo tenho 21 anos, lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!"
             />
-          </Container>
+          </GridContainer>
         </div>
       </Section>
 
@@ -155,7 +156,7 @@ const Home = () => {
         </div>
       </Section>
 
-      <HeadingSection level={2} bgcolor='#421eaa' align='center'>
+      <HeadingSection  level={2} bgcolor='#421eaa' align='center'>
         <TbDiscount2 color="#00a2ff" size="22px" />
         Desconto disponivel por
       </HeadingSection>

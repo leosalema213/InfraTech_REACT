@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import {Props} from '.'
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.div<Props>`
 display: flex;
 flex-direction: column;
 gap: 4px;
 align-items: center;
 justify-content: center;
-margin-bottom: 20px;
+margin: ${(props) => props.margin && props.margin};
 padding: 12px;
 box-shadow: 0px 0px 8px rgba(0,0,0,.4196078431);
 

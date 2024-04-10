@@ -3,7 +3,7 @@ import { Props } from '.'
 
 const Heading = styled.div<Props>`
   color: ${(props) =>
-    props.color != undefined ? props.color : '#fff'};
+    props.color ? props.color : '#fff'};
   position: relative;
   z-index: 1;
   font-size: 1em;

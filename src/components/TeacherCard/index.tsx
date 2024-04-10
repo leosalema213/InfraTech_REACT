@@ -3,15 +3,16 @@ import * as S from './styles'
 
 export type Props = {
   imageurl?: string
-  name: string
-  profession: string
-  description: string;
+  name?: string
+  profession?: string
+  description?: string
+  margin?: string
 }
 
 
-const TeacherCard = ({imageurl, name, profession,description}: Props) => {
+const TeacherCard = ({imageurl, name, profession,description, margin}: Props) => {
   return(
-    <S.CardContainer>
+    <S.CardContainer margin={margin}>
        <img src={imageurl} className='rounded' alt="" />
           <Heading level={2} color='#000' align='center'>{name}</Heading>
           <Heading level={3} color='#000' align='center'>{profession}</Heading>

@@ -1,14 +1,18 @@
 import { ReactNode } from "react"
+import { Text } from "./styles"
 
 export type Props = {
   children: ReactNode
   color?: string
   fsize?: string
+  lheight?: string
 }
-const P = ({children, color, fsize }: Props) => {
-  return<p style={{color: `${color}`, fontSize: `${fsize}`, zIndex: "1", marginTop: "4px"}}>
-    {children}
-  </p>
+const P = ({ children, color, fsize, lheight }: Props) => {
+  return (
+    <Text color={color} fsize={fsize} lheight={lheight}>
+      {children}
+    </Text>
+  )
 }
 
 export default P

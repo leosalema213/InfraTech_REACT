@@ -2,6 +2,9 @@ import Header from "../../components/Header"
 import frontAnimation from "../../assets/animations/animationFrontEnd.svg"
 import P from "../../components/P"
 import Heading from "../../components/Headings"
+import Section from "../../components/Section"
+import Card from "../../components/Card"
+import GridContainer from "../../components/GridContainer"
 
 export const FrontEndPage = () => {
   return (
@@ -22,6 +25,43 @@ export const FrontEndPage = () => {
 
         <img className="animation" src={frontAnimation} alt="" />
       </Header>
+
+      <Section padding="60px 5.6vw" bgcolor="#552c65">
+        <GridContainer gridmd="2" gridlg="4" gap="32px">
+          <Card padding="12px">
+            <Heading level={2} color="#fff">
+              Metodos de ensino
+            </Heading>
+            <P color="#fff" lheight="22px">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corporis ratione.
+            </P>
+          </Card>
+          <Card padding="12px">
+            <Heading level={2} color="#fff">
+              Metodos de ensino
+            </Heading>
+            <P color="#fff" lheight="22px">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corporis ratione.
+            </P>
+          </Card>
+          <Card padding="12px">
+            <Heading level={2} color="#fff">
+              Metodos de ensino
+            </Heading>
+            <P color="#fff" lheight="22px">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corporis ratione.
+            </P>
+          </Card>
+          <Card padding="12px">
+            <Heading level={2} color="#fff">
+              Metodos de ensino
+            </Heading>
+            <P color="#fff" lheight="22px">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corporis ratione.
+            </P>
+          </Card>
+        </GridContainer>
+      </Section>
     </>
   )
 }
