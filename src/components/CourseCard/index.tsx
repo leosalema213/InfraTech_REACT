@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import Btn from "../Button"
+import Button from "../Button"
 import Heading from "../Headings"
 import * as S from "./styles"
 
@@ -8,12 +8,13 @@ export type Props = {
   imageurl?: string
   description?: string
   buttonlink?: string
-  orientation?: "default " | "reverse" 
+  orientation?: "default " | "reverse"
   content?: ReactNode
+  to?: string;
 }
 
 const CourseCard = ({
-  coursename, imageurl, description, orientation, content
+  coursename, imageurl, description, orientation, content, to
 }: Props) => {
   return (
     <S.Card>
@@ -21,21 +22,20 @@ const CourseCard = ({
         level={2}
         color='#000'
         align="center">
-          {coursename}
+        {coursename}
       </Heading>
       <S.CardContainer orientation={orientation}>
         <img src={imageurl} alt="" />
         <div>
-          <p> {description}</p> 
-          <Btn
-            p="1"
-            txtcolor="#fff"
-            bgcolor="#00a2ff"
-            bordercolor="#00a2ff"
+          <p> {description}</p>
+          <Button
+            bgcolor="#0779bb"
+            bgcolorhover="#00a2ff"
+            textcolor="#fff"
+            rounded="10px"
+            to={to}
             content={content}
-            rounded="1"
-            to="/frontend"
-            />
+          />
         </div>
       </S.CardContainer>
     </S.Card>

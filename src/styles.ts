@@ -31,6 +31,12 @@ export const GlobalCss = createGlobalStyle`
       line-height: 26px;
     }
   }
+
+  .container-md {
+    max-width: 700px;
+    witdh: 100%;
+    margin: 0 auto;
+  }
   
   .animation {
     position: absolute;

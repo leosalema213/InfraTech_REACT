@@ -5,7 +5,6 @@ import { Props } from '.'
 export const Group = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px
 `
 
 export const Input = styled.input<Props>`
@@ -13,9 +12,11 @@ export const Input = styled.input<Props>`
   padding: 6px 8px;
   border-radius: 12px;
   font-size: 18px;
-  border: 1px solid ${(props) => props.color != undefined ? props.color : "#000"};
+  border: ${(props) => props.border ? props.border : "none"};
   margin-top: 8px;
+  outline: none;
 `
-export const Label = styled.label`
+export const Label = styled.label<Props>`
   font-size: 18px;
+  color: ${(props) => props.textlabelcolor ? props.textlabelcolor : "#000"};
 `

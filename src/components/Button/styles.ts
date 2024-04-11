@@ -1,34 +1,28 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Props } from '.'
+import { IButton} from '.'
 
-export const Btn = styled.a.attrs({as: Link})<Props>`
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  width: ${(props) => props.width && "100%"};
-  padding: ${(props) => (props.p == '2' ? ' 9px 32px' : '8px 16px')};
-  color: ${(props) => (props.txtcolor ? props.txtcolor : '#000')};
-  border: ${(props) =>
-    props.bordercolor ? `2px solid ${props.txtcolor}` : '2px solid #000'};
-  background-color: ${(props) => (props.bgcolor ? props.bgcolor : '#fff')};
-  border-radius: ${(props) =>
-    (props.rounded == '1' && '30px') || (props.rounded == '2' && '50%')};
-  cursor: pointer;
-  z-index: 1;
-  margin-top: 30px;
+export const Btn = styled.a.attrs({as: Link})<IButton>`
   display: inline-block;
+  color: ${(props) => props.textcolor ? props.textcolor : "#000"};
+  width:${(props) => props.size && props.size};
+  background-color: ${(props) => props.bgcolor && props.bgcolor};
+  border-radius: ${(props) => props.rounded && props.rounded};
+  padding: 8px 16px;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
 
   &:hover {
-    transform: ${(props) => !props.animated && 'translateY(-3px)'};
-    background-color: ${(props) =>
-      props.animated && props.bordercolor};
-    transition: all ease .8s;
-    color: #fff;
+    transform: translateY(-1px);
+    background-color: ${(props) => props.bgcolorhover && props.bgcolorhover};
+    transition: all ease .4s;
   }
 `
 
-export const BtnSubmit = styled(Btn).attrs({ as: 'button' }) `
-  font-size: 1em;
+export const BtnSubmit = styled(Btn).attrs({as: "button"})<IButton>`
+  border: none;
+  font-size: 18px;
 `
+

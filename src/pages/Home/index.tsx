@@ -23,10 +23,12 @@ import Form from '../../components/Form'
 import InputGroup from '../../components/InputGroup'
 import Select from '../../components/Select'
 import Footer from "../../components/Footer";
-import Btn from "../../components/Button";
+import Button from "../../components/Button";
 import P from "../../components/P";
 import FlexContainer from "../../components/FlexContainer";
 import GridContainer from "../../components/GridContainer";
+import ButtonHome from "../../components/ButtonHome";
+
 
 
 
@@ -51,13 +53,13 @@ const Home = () => {
           level={2}
           align='center'
           content="Cursos profissinalizantes para o seu crescimento profissional." />
-        <Btn
-          p="2"
-          txtcolor="#00a2ff"
-          bgcolor="tranparent"
-          bordercolor="#00a2ff"
-          content="Inscreva-se"
-          animated="1"
+        <ButtonHome
+           bgcolor="transparent"
+           bgcolorhover="#00a2ff"
+           textcolor="#00a2ff"
+           bordercolor="#00a2ff"
+           textcolorhover="#fff"
+           content="Inscreva-se"
         />
         <SocialBar socialList={sociallist} />
       </Header>
@@ -92,7 +94,7 @@ const Home = () => {
             content="Nossos Professores" />
 
           <Border bordercolor='#00a2ff' />
-          <GridContainer  gridmd='3' gap="20px">
+          <GridContainer gridmd='3' gap="20px">
 
 
             <TeacherCard
@@ -132,6 +134,7 @@ const Home = () => {
             imageurl={course1}
             description='lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!'
             content='Saiba mais'
+            to="frontend"
           />
           <CourseCard
             coursename='Desenvolvedor Back End'
@@ -156,13 +159,13 @@ const Home = () => {
         </div>
       </Section>
 
-      <HeadingSection  level={2} bgcolor='#421eaa' align='center'>
+      <HeadingSection level={2} bgcolor='#421eaa' align='center'>
         <TbDiscount2 color="#00a2ff" size="22px" />
         Desconto disponivel por
       </HeadingSection>
 
-      <Section> {/* Form */}
-        <div className="container">
+      <Section margin="60px 0 0"> {/* Form */}
+        <div className="container-md">
           <Form >
             <Heading
               level={3}
@@ -171,24 +174,37 @@ const Home = () => {
 
             <Border bordercolor='#00a2ff' />
 
-            <InputGroup label="Nome" inputname="nome" inputtype="text" color="#00a2ff" />
-            <InputGroup label="Celular" inputname="cel" inputtype="tel" color="#00a2ff" />
-            <InputGroup label="Email" inputname="email" inputtype="email" color="#00a2ff" />
-            <Select label='Curso de interesse' color="#00a2ff" >
+            <InputGroup
+              label="Nome"
+              inputname="nome"
+              inputtype="text"
+              border="1px solid #00a2ff" />
+            <InputGroup
+              label="Celular"
+              inputname="cel"
+              inputtype="tel"
+              border="1px solid #00a2ff" />
+            <InputGroup
+              label="Email"
+              inputname="email"
+              inputtype="email"
+              border="1px solid #00a2ff" />
+
+            <Select label='Curso de interesse' border="1px solid #00a2ff">
               <option defaultValue="valor default" />
               <option value="teste">Desenvolvedor Front End</option>
               <option value="teste">Desenvolvedor Back End</option>
               <option value="teste">Desenvolvedor Full Stack Java</option>
               <option value="teste">UX/UI Designer</option>
             </Select>
-            <Btn
-              p="2"
-              txtcolor="#fff"
-              bgcolor="#00a2ff"
-              bordercolor="#00a2ff"
-              content="Inscreva-se"
-              width="100%"
-              type="submit"
+            <Button
+               bgcolor="#0779bb"
+               bgcolorhover="#00a2ff;"
+               textcolor="#fff"
+               rounded="10px"
+               size="100%"
+               type="submit"
+               content="Inscreva-se"
             />
           </Form >
         </div >

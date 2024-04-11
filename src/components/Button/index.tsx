@@ -1,39 +1,43 @@
 import { ReactNode } from 'react'
 import * as S from './styles'
 
-export type Props = {
-  width?: string;
-  type?: "button" | "submit";
-  bgcolor?: string;
-  bordercolor?: string;
-  txtcolor?: string;
-  p?: "1" | "2";
-  rounded?: "1" | "2"
-  content?: ReactNode;
-  animated?: "1";
-  to?: string;
+export interface IButton {
+  size?: string
+  to?: string
+  content?: ReactNode
+  rounded?: string
+  textcolor?: string;
+  bgcolor?: string
+  bgcolorhover?: string
+  type?: 'button' | 'submit'
 }
 
-export const Btn = ({
-  content, p, txtcolor, bgcolor, bordercolor, rounded, animated, width,type,to
-}: Props) => {
-
-  if(type) {
+export const Button = ({
+  size, content, bgcolor, bgcolorhover, type, textcolor, rounded,to
+}: IButton) => {
+  
+  if(type == "submit") {
     return <S.BtnSubmit
-    p={p} txtcolor={txtcolor} bgcolor={bgcolor} width={width}
-    bordercolor={bordercolor} rounded={rounded} animated={animated}
-    type={type}
-  >
+    type="submit"
+    size={size}
+    bgcolor={bgcolor}
+    bgcolorhover={bgcolorhover}
+    textcolor={textcolor} 
+    rounded={rounded}>
     {content}
   </S.BtnSubmit>
-  } 
 
-  return <S.Btn to={to}
-    p={p} txtcolor={txtcolor} bgcolor={bgcolor} width={width}
-    bordercolor={bordercolor} rounded={rounded} animated={animated}
-  >
+  }
+  return <S.Btn
+    type="button"
+    to={to}
+    size={size}
+    bgcolor={bgcolor}
+    bgcolorhover={bgcolorhover}
+    textcolor={textcolor} 
+    rounded={rounded}>
     {content}
   </S.Btn>
 
 }
-export default Btn
+export default Button

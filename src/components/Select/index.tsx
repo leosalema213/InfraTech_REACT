@@ -4,14 +4,16 @@ import { Label } from "../InputGroup/styles"
 
 export type Props = {
   children: ReactNode
-  color?: string
+  border?: string
   label?: string
+  textlabelcolor?: string
 }
 
-export const Select = ({ children, color, label }: Props) => {
+export const Select = ({ children, border, label, textlabelcolor }: Props) => {
   return (
-    <Label>{label}
-      <S.Select color={color}>
+    <Label textlabelcolor={textlabelcolor}>
+      {label}
+      <S.Select border={border}>
         {children}
       </S.Select>
     </Label>

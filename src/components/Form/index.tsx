@@ -4,11 +4,13 @@ import * as S from "./styles"
 
 export type Props = {
   children?: ReactNode
+  bgcolor?: string
+  rounded?: string
 }
 
-const Form = ({children}: Props) => {
+const Form = ({children, bgcolor, rounded}: Props) => {
   return(
-    <S.Formulario >
+    <S.Formulario  bgcolor={bgcolor} rounded={rounded}>
       {children}
     </S.Formulario>
   )

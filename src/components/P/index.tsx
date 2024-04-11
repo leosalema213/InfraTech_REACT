@@ -6,10 +6,11 @@ export type Props = {
   color?: string
   fsize?: string
   lheight?: string
+  fweight?: string
 }
-const P = ({ children, color, fsize, lheight }: Props) => {
+const P = ({ children, color, fsize, lheight, fweight }: Props) => {
   return (
-    <Text color={color} fsize={fsize} lheight={lheight}>
+    <Text color={color} fsize={fsize} lheight={lheight} fweight={fweight}>
       {children}
     </Text>
   )

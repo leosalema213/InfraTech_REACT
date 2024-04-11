@@ -4,16 +4,22 @@ export type Props = {
   label?: string
   inputname?: string
   inputtype?: "text" | "tel" | "email" | "number"
-  color?: string
+  border?: string
+  textlabelcolor?: string
   required?: true
 }
 
-const InputGroup = ({ inputname, inputtype, label, color, required }: Props) => {
+const InputGroup = ({ 
+  inputname, inputtype, label, border, required, textlabelcolor 
+}: Props) => {
 
   return (
     <S.Group>
-      <S.Label>{label}
-        <S.Input required={required}  type={inputtype} name={inputname} id={inputname} color={color} />
+      <S.Label textlabelcolor={textlabelcolor}>{label}
+        <S.Input required={required}
+          type={inputtype} name={inputname}
+          id={inputname} border={border}
+        />
       </S.Label>
     </S.Group>
   )

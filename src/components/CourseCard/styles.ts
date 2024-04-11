@@ -44,6 +44,6 @@ export const CardContainer = styled.div<Props>`
 
   p {
     line-height: 26px;
-    margin-top: 6px;
+    margin: 8px 0;
   }
 `

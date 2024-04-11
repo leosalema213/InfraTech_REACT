@@ -1,17 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+import { Props } from '.'
 
-export const Formulario = styled.form`
-  padding: 30px 6px 60px;
-  display> flex;
-  align-items: center;
-  gap: 10px;
-  
-  @media (min-width: 600px) {
-    max-width: 100%;
-    padding: 30px 80px 60px;
-  }
-
-  @media (min-width: 900px) {
-    padding: 30px 200px 60px;
-  }
+export const Formulario = styled.form<Props>`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  border-radius: ${(props) => props.rounded && props.rounded};
+  background-color: ${(props) => props.bgcolor && props.bgcolor};
 `

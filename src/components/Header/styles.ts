@@ -22,6 +22,7 @@ export const HeaderContainer = styled.div<Props>`
   }
 
   @media (min-width: 600px) {
+    row-gap: 40px;
     font-size: 22px;
     width: 100%;
   }
