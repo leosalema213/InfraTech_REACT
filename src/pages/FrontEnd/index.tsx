@@ -1,5 +1,5 @@
-import Header from "../../components/Header"
-import frontAnimation from "../../assets/animations/animationFrontEnd.svg"
+import CourseHeader from "../../components/CourseHeader"
+//import frontAnimation from "../../assets/animations/animationFrontEnd.svg"
 import P from "../../components/P"
 import Heading, { HeadingSection } from "../../components/Headings"
 import Section from "../../components/Section"
@@ -9,80 +9,156 @@ import Accordion from "../../components/Accordion"
 import Form from "../../components/Form"
 import { Select } from "../../components/Select"
 import InputGroup from "../../components/InputGroup"
-import Border from "../../components/Border"
 import Footer from "../../components/Footer"
 import Button from "../../components/Button"
+import Hr from "../../components/Hr"
+import { FrontCss } from './styles'
 
-const accordionsItem = [
+interface IContent {
+  title: string
+  content: string
+}
+
+
+const accordionsItem: IContent[] = [
   {
-    title: "HTML / CSS",
+    title: "HTML | CSS",
     content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
   },
   {
-    title: "JavaScript / jQuery",
+    title: "JavaScript | jQuery",
     content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
   },
+  {
+    title: "React Js",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
+  },
+  {
+    title: "Versionamento de código",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
+  },
+  {
+    title: "SASS | LESS",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
+  },
+]
+
+const courseInfos: IContent[] = [
+  {
+    title: "Métodos de ensino",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
+  },
+  {
+    title: "Acesso vitalício",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
+  },
+  {
+    title: "Centro de carreiras",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
+  },
+  {
+    title: "Projetos práticos",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
+  }
 ]
 
 
 export const FrontEndPage = () => {
   return (
     <>
-      <Header
+      <FrontCss />
+      <CourseHeader
+        gap="20px"
         background="linear-gradient(to right, #552c65, #8467bd, #ee93cd);"
         after="1"
       >
-        <P color="#0effff" fsize="1em">
-          Garanta uma carreira de sucesso como
-        </P>
+        <div>
+          <P color="#0effff" fsize="1em">
+            Garanta uma carreira de sucesso como
+          </P>
 
-        <Heading level={1} fsize="2em" content="Desenvolvedor Front end" />
+          <Heading level={1} fsize="1.8em" content="Desenvolvedor Front end" />
 
-        <P color="#FFF" fsize="1em">Para você que não conhece nada de programação</P>
-        <P color="#FFF" fsize="1em">Mentores com mais de 10 anos de mercado</P>
-        <P color="#FFF" fsize="1em">Garanta seu emprego ou devolvemos seu dinheiro</P>
 
-        <img className="animation" src={frontAnimation} alt="" />
-      </Header>
+          <div>
+            <P color="#FFF" fsize="1em">
+              • Para você que não conhece nada deprogramação
+            </P>
+            <P color="#FFF" fsize="1em">
+              • Mentores com mais de 10 anos de mercado
+            </P>
+            <P color="#FFF" fsize="1em">
+              • Garanta seu emprego ou devolvemos seu dinheiro
+            </P>
+          </div>
+
+        </div>
+
+        <Section id="formHeader">
+
+          <div className="container">
+            <Form bgcolor="#552c65" rounded="20px">
+              <div>
+                <P fweight="bold" color="#fff" fsize="24px">Inscreva-se agora</P>
+                <P fweight="bold" color="#fff" fsize="18px">venha fazer parte do nosso time!</P>
+              </div>
+
+              <Hr bordercolor='#00a2ff' />
+
+              <InputGroup
+                textlabelcolor="#fff"
+                label="Nome"
+                inputname="nome"
+                inputtype="text" />
+              <InputGroup
+                textlabelcolor="#fff"
+                label="Celular"
+                inputname="cel"
+                inputtype="tel" />
+              <InputGroup
+                textlabelcolor="#fff"
+                label="Email"
+                inputname="email"
+                inputtype="email" />
+
+              <Select label='Curso de interesse' textlabelcolor="#fff">
+                <option selected value="teste">Desenvolvedor Front End</option>
+              </Select>
+
+              <Button
+                bgcolor="#0779bb"
+                bgcolorhover="#00a2ff;"
+                textcolor="#fff"
+                rounded="10px"
+                size="100%"
+                type="submit"
+                content="Inscreva-se"
+              />
+            </Form >
+          </div >
+
+        </Section>
+      </CourseHeader>
 
       <Section padding="60px 5.6vw" bgcolor="#552c65">
         <GridContainer gridmd="2" gridlg="4" gap="32px">
-          <Card padding="12px">
-            <Heading level={2} color="#fff">
-              Metodos de ensino
-            </Heading>
-            <P color="#fff" lheight="22px">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corporis ratione.
-            </P>
-          </Card>
-          <Card padding="12px">
-            <Heading level={2} color="#fff">
-              Metodos de ensino
-            </Heading>
-            <P color="#fff" lheight="22px">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corporis ratione.
-            </P>
-          </Card>
-          <Card padding="12px">
-            <Heading level={2} color="#fff">
-              Metodos de ensino
-            </Heading>
-            <P color="#fff" lheight="22px">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corporis ratione.
-            </P>
-          </Card>
-          <Card padding="12px">
-            <Heading level={2} color="#fff">
-              Metodos de ensino
-            </Heading>
-            <P color="#fff" lheight="22px">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate dolorum cumque voluptatibus quasi beatae voluptatem amet sunt eum aliquid corporis ratione.
-            </P>
-          </Card>
+          {courseInfos.map((item) =>
+          (
+            <Card padding="12px">
+              <Heading level={2} color="#fff">
+                {item.title}
+              </Heading>
+              <P color="#fff" lheight="22px">
+                {item.content}
+              </P>
+            </Card>
+          )
+          )}
         </GridContainer>
-      </Section>
+      </Section >
 
       <Section>
+
         <div className="container">
           <HeadingSection color="#552c65" align="center">
             Oque você ira aprender
@@ -96,11 +172,13 @@ export const FrontEndPage = () => {
             />
           ))}
         </div>
+
       </Section>
 
-      <Border bordercolor="#552c65" />
+      <Hr bordercolor="#552c65" />
 
       <Section margin="120px 0 0">
+
         <div className="container">
           <Form bgcolor="#552c65" rounded="20px">
             <div>
@@ -108,7 +186,7 @@ export const FrontEndPage = () => {
               <P fweight="bold" color="#fff" fsize="18px">venha fazer parte do nosso time!</P>
             </div>
 
-            <Border bordercolor='#00a2ff' />
+            <Hr bordercolor='#00a2ff' />
 
             <InputGroup
               textlabelcolor="#fff"
@@ -127,11 +205,7 @@ export const FrontEndPage = () => {
               inputtype="email" />
 
             <Select label='Curso de interesse' textlabelcolor="#fff">
-              <option defaultValue="valor default" />
-              <option value="teste">Desenvolvedor Front End</option>
-              <option value="teste">Desenvolvedor Back End</option>
-              <option value="teste">Desenvolvedor Full Stack Java</option>
-              <option value="teste">UX/UI Designer</option>
+              <option selected value="teste">Desenvolvedor Front End</option>
             </Select>
 
             <Button
@@ -145,6 +219,7 @@ export const FrontEndPage = () => {
             />
           </Form >
         </div >
+
       </Section>
 
       <Footer bgcolor='#552c65'>

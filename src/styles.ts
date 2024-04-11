@@ -37,11 +37,4 @@ export const GlobalCss = createGlobalStyle`
     witdh: 100%;
     margin: 0 auto;
   }
-  
-  .animation {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-  }
-  
 `

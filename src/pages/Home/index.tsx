@@ -14,7 +14,6 @@ import course2 from '../../assets/section/courseBack.png'
 import course3 from '../../assets/section/courseFull.png'
 import course4 from '../../assets/section/courseUxUi.png'
 
-import Border from '../../components/Border'
 import SocialBar, { ISocial } from '../../components/SocialBar'
 import Section from '../../components/Section'
 import TeacherCard from '../../components/TeacherCard'
@@ -28,6 +27,7 @@ import P from "../../components/P";
 import FlexContainer from "../../components/FlexContainer";
 import GridContainer from "../../components/GridContainer";
 import ButtonHome from "../../components/ButtonHome";
+import Hr from "../../components/Hr";
 
 
 
@@ -46,7 +46,13 @@ const sociallist: ISocial[] = [
 const Home = () => {
   return (
     <>
-      <Header after="2" background={backgroundHome} align="center" justify="center" >
+      <Header
+        after="2"
+        background={backgroundHome}
+        align="center"
+        justify="center"
+        gap="20px" >
+
         <P color="#00a2ff" fsize="18px">formação online</P>
         <Heading level={1} content="Cursos Infratech" align='center' />
         <Heading
@@ -54,14 +60,15 @@ const Home = () => {
           align='center'
           content="Cursos profissinalizantes para o seu crescimento profissional." />
         <ButtonHome
-           bgcolor="transparent"
-           bgcolorhover="#00a2ff"
-           textcolor="#00a2ff"
-           bordercolor="#00a2ff"
-           textcolorhover="#fff"
-           content="Inscreva-se"
+          bgcolor="transparent"
+          bgcolorhover="#00a2ff"
+          textcolor="#00a2ff"
+          bordercolor="#00a2ff"
+          textcolorhover="#fff"
+          content="Inscreva-se"
         />
         <SocialBar socialList={sociallist} />
+          
       </Header>
 
       <HeadingSection
@@ -75,7 +82,7 @@ const Home = () => {
             level={2}
             color='#000'
             content="Sobre nós " />
-          <Border bordercolor='#00a2ff' />
+          <Hr bordercolor='#00a2ff' />
           <FlexContainer flexsm="column" flexmd="row">
             <img src={aboutimage} alt="" />
             <p>
@@ -93,7 +100,7 @@ const Home = () => {
             bgcolor='#00a2ff'
             content="Nossos Professores" />
 
-          <Border bordercolor='#00a2ff' />
+          <Hr bordercolor='#00a2ff' />
           <GridContainer gridmd='3' gap="20px">
 
 
@@ -127,7 +134,7 @@ const Home = () => {
             align="center"
             bgcolor='#00a2ff'
             content=" Nossos Cursos" />
-          <Border bordercolor='#00a2ff' />
+          <Hr bordercolor='#00a2ff' />
 
           <CourseCard
             coursename='Desenvolvedor Front End'
@@ -172,7 +179,7 @@ const Home = () => {
               color='#000'
               content="Garanta ja sua vaga" />
 
-            <Border bordercolor='#00a2ff' />
+            <Hr bordercolor='#00a2ff' />
 
             <InputGroup
               label="Nome"
@@ -198,13 +205,13 @@ const Home = () => {
               <option value="teste">UX/UI Designer</option>
             </Select>
             <Button
-               bgcolor="#0779bb"
-               bgcolorhover="#00a2ff;"
-               textcolor="#fff"
-               rounded="10px"
-               size="100%"
-               type="submit"
-               content="Inscreva-se"
+              bgcolor="#0779bb"
+              bgcolorhover="#00a2ff;"
+              textcolor="#fff"
+              rounded="10px"
+              size="100%"
+              type="submit"
+              content="Inscreva-se"
             />
           </Form >
         </div >

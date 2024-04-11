@@ -6,11 +6,12 @@ export type Props = {
   bgcolor?: string
   margin?: string;
   padding?: string;
+  id?: string
 }
 
-const Section = ({ children, bgcolor, margin, padding }: Props) => {
+const Section = ({ children, bgcolor, margin, padding, id }: Props) => {
   return (
-    <S.Section bgcolor={bgcolor} margin={margin} padding={padding}>
+    <S.Section id={id} bgcolor={bgcolor} margin={margin} padding={padding}>
         {children}
     </S.Section>
   )

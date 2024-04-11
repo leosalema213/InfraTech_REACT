@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Props } from '.'
+import { IHeaderProps } from '.'
 
-export const HeaderContainer = styled.div<Props>`
+export const HeaderContainer = styled.div<IHeaderProps>`
   width: 100vw;
   height: 100vh;
   background: ${(props) => props.background && props.background};
@@ -9,13 +9,18 @@ export const HeaderContainer = styled.div<Props>`
   background-size: cover;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: ${(props) => props.gap};
   padding: 5.6vw;
   align-items: ${(props) => props.align && props.align};
   justify-content: ${(props) => props.justify && props.justify};
   position: relative;
   
-
+  &>div {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
   ul {
     top: 24px; 
     right: 12px;
