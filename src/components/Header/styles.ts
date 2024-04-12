@@ -13,14 +13,15 @@ export const HeaderContainer = styled.div<IHeaderProps>`
   padding: 5.6vw;
   align-items: ${(props) => props.align && props.align};
   justify-content: ${(props) => props.justify && props.justify};
-  position: relative;
-  
+  position: relative; 
+
   &>div {
     z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
+  
   ul {
     top: 24px; 
     right: 12px;
@@ -31,7 +32,7 @@ export const HeaderContainer = styled.div<IHeaderProps>`
     font-size: 22px;
     width: 100%;
   }
-
+  
   &::after {
     background-color: rgba(0, 0, 0, 
       ${(props) => props.after == "1" ? "0.4" :  "0.7" });

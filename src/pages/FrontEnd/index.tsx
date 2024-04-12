@@ -1,5 +1,4 @@
-import CourseHeader from "../../components/CourseHeader"
-//import frontAnimation from "../../assets/animations/animationFrontEnd.svg"
+import frontAnimation from "../../assets/animations/animationFrontEnd.svg"
 import P from "../../components/P"
 import Heading, { HeadingSection } from "../../components/Headings"
 import Section from "../../components/Section"
@@ -13,6 +12,7 @@ import Footer from "../../components/Footer"
 import Button from "../../components/Button"
 import Hr from "../../components/Hr"
 import { FrontCss } from './styles'
+import { Link } from "react-router-dom"
 
 interface IContent {
   title: string
@@ -64,15 +64,12 @@ const courseInfos: IContent[] = [
 
 
 export const FrontEndPage = () => {
+
   return (
     <>
       <FrontCss />
-      <CourseHeader
-        gap="20px"
-        background="linear-gradient(to right, #552c65, #8467bd, #ee93cd);"
-        after="1"
-      >
-        <div>
+      <header>
+        <div className="content">
           <P color="#0effff" fsize="1em">
             Garanta uma carreira de sucesso como
           </P>
@@ -81,70 +78,28 @@ export const FrontEndPage = () => {
 
 
           <div>
-            <P color="#FFF" fsize="1em">
-              • Para você que não conhece nada deprogramação
+            <P color="#0effff" fsize="1em">
+              Para quem o curso é indicado?
             </P>
             <P color="#FFF" fsize="1em">
-              • Mentores com mais de 10 anos de mercado
+              Para você que não conhece nada de programação
             </P>
             <P color="#FFF" fsize="1em">
-              • Garanta seu emprego ou devolvemos seu dinheiro
+              Mentores com mais de 10 anos de mercado
+            </P>
+            <P color="#FFF" fsize="1em">
+              Garanta seu emprego ou devolvemos seu dinheiro
             </P>
           </div>
-
         </div>
+        <img className="animation" src={frontAnimation} alt="" />
+      </header>
 
-        <Section id="formHeader">
-
-          <div className="container">
-            <Form bgcolor="#552c65" rounded="20px">
-              <div>
-                <P fweight="bold" color="#fff" fsize="24px">Inscreva-se agora</P>
-                <P fweight="bold" color="#fff" fsize="18px">venha fazer parte do nosso time!</P>
-              </div>
-
-              <Hr bordercolor='#00a2ff' />
-
-              <InputGroup
-                textlabelcolor="#fff"
-                label="Nome"
-                inputname="nome"
-                inputtype="text" />
-              <InputGroup
-                textlabelcolor="#fff"
-                label="Celular"
-                inputname="cel"
-                inputtype="tel" />
-              <InputGroup
-                textlabelcolor="#fff"
-                label="Email"
-                inputname="email"
-                inputtype="email" />
-
-              <Select label='Curso de interesse' textlabelcolor="#fff">
-                <option selected value="teste">Desenvolvedor Front End</option>
-              </Select>
-
-              <Button
-                bgcolor="#0779bb"
-                bgcolorhover="#00a2ff;"
-                textcolor="#fff"
-                rounded="10px"
-                size="100%"
-                type="submit"
-                content="Inscreva-se"
-              />
-            </Form >
-          </div >
-
-        </Section>
-      </CourseHeader>
-
-      <Section padding="60px 5.6vw" bgcolor="#552c65">
+      <Section padding="60px 5.6vw" bgcolor="linear-gradient(180deg, #ee93cd9c, #552c65)">
         <GridContainer gridmd="2" gridlg="4" gap="32px">
           {courseInfos.map((item) =>
           (
-            <Card padding="12px">
+            <Card padding="12px" bgcolor="rgba(0,0,0,0.1)">
               <Heading level={2} color="#fff">
                 {item.title}
               </Heading>
@@ -205,7 +160,7 @@ export const FrontEndPage = () => {
               inputtype="email" />
 
             <Select label='Curso de interesse' textlabelcolor="#fff">
-              <option selected value="teste">Desenvolvedor Front End</option>
+              <option selected defaultValue="Desenvolvedor Front End" > Desenvolvedor Front End </option>
             </Select>
 
             <Button
@@ -223,7 +178,7 @@ export const FrontEndPage = () => {
       </Section>
 
       <Footer bgcolor='#552c65'>
-        <P>Voltar para a home</P>
+        <Link to="/">Voltar para a home</Link>
         <P>© Todos os direitos reservados</P>
       </Footer>
 

@@ -12,11 +12,11 @@ export const Button = styled.button<Props>`
   padding:  8px 24px;
   color: ${(props) => props.textcolor };
   border: 1px solid ${(props) => props.bordercolor};
-  background-color: ${(props) => props.bgcolor};
+  background: ${(props) => props.bgcolor};
 
   &:hover {
-    background-color: ${(props) => props.bgcolorhover};
-    transition: all ease .8s;
+    background: ${(props) => props.bgcolorhover};
+    transition: all ease .2s;
     color: ${(props) => props.textcolorhover};
   }
 `
