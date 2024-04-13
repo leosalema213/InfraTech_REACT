@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {Props} from '.'
+import {ITeacherProps} from '.'
 
-export const CardContainer = styled.div<Props>`
+export const CardContainer = styled.div<ITeacherProps>`
 display: flex;
 flex-direction: column;
 gap: 4px;
@@ -13,7 +13,7 @@ box-shadow: 0px 0px 8px rgba(0,0,0,.4196078431);
 
 @media (max-width: 900px) {
   h2 {
-    font-size: 20px;
+    font-size: 20px;1
   }
   h3 {
     font-size: 18px;

@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { Grid } from "./styles"
 
-export type Props = {
+export interface IGridProps {
   gridsm?: string
   gridmd?: string
   gridlg?: string
@@ -9,7 +9,7 @@ export type Props = {
   children?: ReactNode
 }
 
-const GridContainer = ({ children, gap, gridlg, gridmd, gridsm }: Props) => {
+const GridContainer = ({ children, gap, gridlg, gridmd, gridsm }: IGridProps) => {
   return (
     <Grid
       gap={gap}

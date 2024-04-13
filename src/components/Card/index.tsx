@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { CardContainer } from './styles'
 
-export type Props = {
+export interface ICardProps {
   children: ReactNode
   bgcolor?: string
   boxshadow?: string
@@ -9,7 +9,7 @@ export type Props = {
   margin?: string
 }
 
-const Card = ({ children, bgcolor, boxshadow, padding, margin }: Props) => {
+const Card = ({ children, bgcolor, boxshadow, padding, margin }: ICardProps) => {
   return (
     <CardContainer bgcolor={bgcolor} boxshadow={boxshadow} padding={padding} margin={margin}>
       {children}

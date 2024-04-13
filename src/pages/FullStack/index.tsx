@@ -121,7 +121,7 @@ export default function FullStackPage()  {
         <GridContainer gridmd="2" gridlg="4" gap="32px">
           {courseInfos.map((item) =>
           (
-            <Card key={Math.floor(Math.random())} padding="12px" bgcolor="rgba(0,0,0,0.1)">
+            <Card key={item.title} padding="12px" bgcolor="rgba(0,0,0,0.1)">
               <Heading level={2} color="#fff">
                 {item.title}
               </Heading>
@@ -143,7 +143,7 @@ export default function FullStackPage()  {
 
           {accordionsItem.map((item) => (
             <Accordion
-              key={Math.floor(Math.random())}
+              key={item.title}
               titlecolor="#af2b03"
               title={item.title}
               content={item.content}

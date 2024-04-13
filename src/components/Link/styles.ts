@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import { ILink } from "."
+import { ILinkProps } from "."
 import { Link } from "react-router-dom"
 
-export const Text = styled(Link)<ILink>`
+export const Text = styled(Link)<ILinkProps>`
 text-decoration: none;
   margin-top: 6px;
   font-size: ${(props) => props.fsize && props.fsize};

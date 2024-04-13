@@ -1,6 +1,3 @@
-import { NavLink } from 'react-router-dom'
-import { useId } from 'react'
-
 import frontAnimation from "../../assets/animations/animationFrontEnd.svg"
 import P from "../../components/P"
 import Heading, { HeadingSection } from "../../components/Headings"
@@ -68,7 +65,6 @@ const courseInfos: IContent[] = [
 
 export default function FrontEndPage() {
 
-  const id = useId()
 
   return (
     <>
@@ -105,7 +101,7 @@ export default function FrontEndPage() {
         <GridContainer gridmd="2" gridlg="4" gap="32px">
           {courseInfos.map((item) =>
           (
-            <Card key={id} padding="12px" bgcolor="rgba(0,0,0,0.1)">
+            <Card key={item.title} padding="12px" bgcolor="rgba(0,0,0,0.1)">
               <Heading level={2} color="#fff">
                 {item.title}
               </Heading>
@@ -127,7 +123,7 @@ export default function FrontEndPage() {
 
           {accordionsItem.map((item) => (
             <Accordion
-              key={id}
+              key={item.title}
               titlecolor="#552c65"
               title={item.title}
               content={item.content}
@@ -192,7 +188,6 @@ export default function FrontEndPage() {
           content='Voltar para a home'
         />
         <P>© Todos os direitos reservados</P>
-        <NavLink to={'/'}>teste</NavLink>
       </Footer>
 
     </>

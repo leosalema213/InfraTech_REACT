@@ -13,7 +13,6 @@ import Button from "../../components/Button"
 import Hr from "../../components/Hr"
 import { BackCss } from './styles'
 import Link from "../../components/Link"
-import { useId } from "react"
 
 interface IContent {
   title: string
@@ -66,8 +65,6 @@ const courseInfos: IContent[] = [
 
 export default function BackEndPage(){
 
-  const id = useId()
-
   return (
     <>
       <BackCss />
@@ -102,7 +99,7 @@ export default function BackEndPage(){
         <GridContainer gridmd="2" gridlg="4" gap="32px">
           {courseInfos.map((item) =>
           (
-            <Card key={id} padding="12px" bgcolor="rgba(0,0,0,0.1)">
+            <Card key={item.title} padding="12px" bgcolor="rgba(0,0,0,0.1)">
               <Heading level={2} color="#fff">
                 {item.title}
               </Heading>
@@ -124,7 +121,7 @@ export default function BackEndPage(){
 
           {accordionsItem.map((item) => (
             <Accordion
-              key={id}
+              key={item.title}
               titlecolor="#0c3a19"
               title={item.title}
               content={item.content}

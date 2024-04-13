@@ -1,8 +1,8 @@
-export type Props = {
-  bordercolor?: string;
+export interface IBorderProps  {
+  bordercolor?: string
 }
 
-const Hr = ({bordercolor}: Props) => {
+const Hr = ({bordercolor}: IBorderProps) => {
     
   return(
     <div style={{

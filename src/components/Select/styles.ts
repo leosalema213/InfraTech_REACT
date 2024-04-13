@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Props } from ".";
+import { ISelectProps } from ".";
 
-export const Select = styled.select<Props>`
+export const Select = styled.select<ISelectProps>`
   width: 100%;
   padding: 6px 8px;
   border-radius: 12px;

@@ -1,6 +1,6 @@
 import * as S from "./styles"
 
-export type Props = {
+export interface IInput {
   label?: string
   inputname?: string
   inputtype?: "text" | "tel" | "email" | "number"
@@ -11,7 +11,7 @@ export type Props = {
 
 const InputGroup = ({ 
   inputname, inputtype, label, border, required, textlabelcolor 
-}: Props) => {
+}: IInput) => {
 
   return (
     <S.Group>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Props } from '.'
+import { IFormProps } from '.'
 
-export const Formulario = styled.form<Props>`
+export const Formulario = styled.form<IFormProps>`
   display: flex;
   flex-direction: column;
   padding: 20px;

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Props } from '.'
+import { IGridProps } from '.'
 
-export const Grid = styled.div<Props>`
+export const Grid = styled.div<IGridProps>`
   display: grid;
   justify-content: space-between;
   grid-template-columns: ${(props) =>

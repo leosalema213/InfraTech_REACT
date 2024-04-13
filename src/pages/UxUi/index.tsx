@@ -11,8 +11,8 @@ import InputGroup from "../../components/InputGroup"
 import Footer from "../../components/Footer"
 import Button from "../../components/Button"
 import Hr from "../../components/Hr"
-import {FullCss} from './styles'
 import Link from "../../components/Link"
+import { UxCss } from "./styles"
 
 interface IContent {
   title: string
@@ -61,9 +61,10 @@ const courseInfos: IContent[] = [
 
 export default function UxUiPage()  {
 
+
   return (
     <>
-      <FullCss />
+      <UxCss />
       <header className="overlay">
         <div className="content">
           <P color="#ff70f5" fsize="1em">
@@ -97,7 +98,7 @@ export default function UxUiPage()  {
         <GridContainer gridmd="2" gridlg="4" gap="32px">
           {courseInfos.map((item) =>
           (
-            <Card key={Math.floor(Math.random())} padding="12px" bgcolor="rgba(0,0,0,0.1)">
+            <Card key={item.title} padding="12px" bgcolor="rgba(0,0,0,0.1)">
               <Heading level={2} color="#fff">
                 {item.title}
               </Heading>
@@ -119,7 +120,7 @@ export default function UxUiPage()  {
 
           {accordionsItem.map((item) => (
             <Accordion
-              key={Math.floor(Math.random())}
+              key={item.title}
               titlecolor="#3a0436"
               title={item.title}
               content={item.content}

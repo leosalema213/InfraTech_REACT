@@ -7,12 +7,12 @@ export interface ISocial {
 }
 
 
-export type Props = {
+export interface ISocialProps  {
   direction?: "col" | "row";
   socialList: ISocial[];
 }
 
-const SocialBar = ({socialList}: Props) => {
+const SocialBar = ({socialList}: ISocialProps) => {
 
 
   return (

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import * as S from './styles'
 
-export type Props = {
+export interface IButtoHeaderProps {
   content?: ReactNode
   bgcolor?: string
   bgcolorhover?: string
@@ -10,9 +10,9 @@ export type Props = {
   textcolorhover?: string
 }
 
-export const ButtonHome = ({
+export const ButtonHeader = ({
   content, bgcolor, bgcolorhover, textcolor, bordercolor, textcolorhover
-}: Props) => {
+}: IButtoHeaderProps) => {
   return <S.Button
     bgcolor={bgcolor} bgcolorhover={bgcolorhover}
     textcolor={textcolor} bordercolor={bordercolor} textcolorhover={textcolorhover}
@@ -21,4 +21,4 @@ export const ButtonHome = ({
   </S.Button>
 
 }
-export default ButtonHome
+export default ButtonHeader

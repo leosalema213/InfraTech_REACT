@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { Props } from "."
+import { IParagraphProps } from "."
 
-export const Text = styled.p<Props>`
+export const Text = styled.p<IParagraphProps>`
   margin-top: 6px;
   font-size: ${(props) => props.fsize && props.fsize};
   color: ${(props) => props.color && props.color};

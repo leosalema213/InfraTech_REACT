@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Props } from '.'
+import { IFooterProps } from '.'
 
-export const FooterContainer = styled.footer<Props>`
+export const FooterContainer = styled.footer<IFooterProps>`
   display: flex;
   background: ${(props) => (props.bgcolor ? props.bgcolor : '#fff')};
   color: ${(props) => (props.textcolor ? props.textcolor : '#fff')};

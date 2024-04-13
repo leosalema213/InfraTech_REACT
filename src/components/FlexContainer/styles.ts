@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Props } from '.'
+import { IFlexProps } from '.'
 
-export const Flex = styled.div<Props>`
+export const Flex = styled.div<IFlexProps>`
   display: flex;
   flex-direction: ${(props) => props.flexsm && props.flexsm};
   gap: ${(props) => props.gap && props.gap};

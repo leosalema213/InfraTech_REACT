@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import { Props } from ".";
+import { IAccordionProps } from ".";
 
-export const AccoridionContainer = styled.div<Props>`
+export const AccoridionContainer = styled.div<IAccordionProps>`
   display: flex;
   flex-direction: column;
   border: 1px solid ${(props) => props.bordercolor ? props.bordercolor : "#575757"};
   margin-top: 20px;
 `
 
-export const AccordionHeader = styled.div<Props>`
+export const AccordionHeader = styled.div<IAccordionProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@ export const AccordionHeader = styled.div<Props>`
   } 
 `
 
-export const AccordionContent = styled.div<Props>`
+export const AccordionContent = styled.div<IAccordionProps>`
 @keyframes go-back {
   0% {
     opacity: 0;

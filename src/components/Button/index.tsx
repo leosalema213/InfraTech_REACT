@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import * as S from './styles'
 
-export interface IButton {
+export interface IButtonProps {
   size?: string
   to?: string
   content?: ReactNode
@@ -14,7 +14,7 @@ export interface IButton {
 
 export const Button = ({
   size, content, bgcolor, bgcolorhover, type, textcolor, rounded,to
-}: IButton) => {
+}: IButtonProps) => {
   
   if(type == "submit") {
     return <S.BtnSubmit

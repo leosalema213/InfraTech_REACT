@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Props } from '.'
+import { ICourseProps } from '.'
 
-export const Card = styled.div<Props>`
+export const Card = styled.div<ICourseProps>`
   padding: 12px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4196078431);
   margin-bottom: 40px;
@@ -19,7 +19,7 @@ export const Card = styled.div<Props>`
   }
 `
 
-export const CardContainer = styled.div<Props>`
+export const CardContainer = styled.div<ICourseProps>`
   display: flex;
   flex-direction: column;
   gap: 4px;

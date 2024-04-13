@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Props } from '.'
+import { IInput } from '.'
 
 
 export const Group = styled.div`
@@ -7,7 +7,7 @@ export const Group = styled.div`
   flex-direction: column;
 `
 
-export const Input = styled.input<Props>`
+export const Input = styled.input<IInput>`
   width: 100%;
   padding: 6px 8px;
   border-radius: 12px;
@@ -16,7 +16,7 @@ export const Input = styled.input<Props>`
   margin-top: 8px;
   outline: none;
 `
-export const Label = styled.label<Props>`
+export const Label = styled.label<IInput>`
   font-size: 18px;
   color: ${(props) => props.textlabelcolor ? props.textlabelcolor : "#000"};
 `

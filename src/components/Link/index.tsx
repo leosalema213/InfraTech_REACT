@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { Text } from "./styles"
 
-export interface ILink {
+export interface ILinkProps {
   content?: ReactNode
   color?: string
   colorhover?: string
@@ -14,7 +14,7 @@ export interface ILink {
 
 const Link = ({
   content, color, colorhover, fsize, lheight, fweight, to
-}: ILink) => {
+}: ILinkProps) => {
   return (
     <Text
       colorhover={colorhover}

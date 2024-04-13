@@ -2,14 +2,14 @@ import { ReactNode } from 'react'
 import * as S from './styles'
 import { Label } from "../InputGroup/styles"
 
-export type Props = {
+export interface ISelectProps {
   children: ReactNode
   border?: string
   label?: string
   textlabelcolor?: string
 }
 
-export const Select = ({ children, border, label, textlabelcolor }: Props) => {
+export const Select = ({ children, border, label, textlabelcolor }: ISelectProps) => {
   return (
     <Label textlabelcolor={textlabelcolor}>
       {label}

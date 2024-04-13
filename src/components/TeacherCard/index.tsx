@@ -1,7 +1,7 @@
 import Heading from '../Headings'
 import * as S from './styles'
 
-export type Props = {
+export interface ITeacherProps {
   imageurl?: string
   name?: string
   profession?: string
@@ -10,7 +10,7 @@ export type Props = {
 }
 
 
-const TeacherCard = ({imageurl, name, profession,description, margin}: Props) => {
+const TeacherCard = ({imageurl, name, profession,description, margin}: ITeacherProps) => {
   return(
     <S.CardContainer margin={margin}>
        <img src={imageurl} className='rounded' alt="" />

@@ -3,7 +3,7 @@ import Button from "../Button"
 import Heading from "../Headings"
 import * as S from "./styles"
 
-export type Props = {
+export interface ICourseProps {
   coursename?: string
   imageurl?: string
   description?: string
@@ -15,7 +15,7 @@ export type Props = {
 
 const CourseCard = ({
   coursename, imageurl, description, orientation, content, to
-}: Props) => {
+}: ICourseProps) => {
   return (
     <S.Card>
       <Heading

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Props } from '.'
+import { ICardProps } from '.'
 
-export const CardContainer = styled.div<Props>`
+export const CardContainer = styled.div<ICardProps>`
   background: ${(props) => props.bgcolor && props.bgcolor};
   box-shadow: ${(props) =>
     props.boxshadow

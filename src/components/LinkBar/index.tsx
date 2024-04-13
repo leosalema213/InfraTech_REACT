@@ -1,11 +1,11 @@
 import { LinkContainer } from './styles'
-import Link, { ILink } from '../Link'
+import Link, { ILinkProps } from '../Link'
 
-export interface ILinkBar {
-  links: ILink[]
+export interface ILinkBarProps {
+  links: ILinkProps[]
 }
 
-const LinkBar = ({ links }: ILinkBar) => {
+const LinkBar = ({ links }: ILinkBarProps) => {
 
   
 
@@ -13,6 +13,7 @@ const LinkBar = ({ links }: ILinkBar) => {
     <LinkContainer>
      {links.map((link) => (
       <Link
+      key={crypto.randomUUID()}
       content={link.content} 
       to={link.to}
       color={link.color}

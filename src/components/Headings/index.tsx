@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import * as S from './styles'
 
-export type Props = {
+export interface IHeading {
   level?: 1 | 2 | 3
   children?: ReactNode
   content?: string
@@ -14,7 +14,7 @@ export type Props = {
 const Heading = ({
   level, children, content,
   align, color, fsize
-}: Props) => {
+}: IHeading) => {
   const headingTags = {
     1: S.H1,
     2: S.H2,
@@ -34,7 +34,7 @@ const Heading = ({
 export const HeadingSection = ({ 
   children, content, bgcolor,
   align, color, fsize
-}: Props) => {
+}: IHeading) => {
   return (
     <S.SectionTitle 
     fsize={fsize}

@@ -4,7 +4,7 @@ import P from '../P'
 import { IoMdClose } from "react-icons/io";
 import { BiSolidDownArrow } from "react-icons/bi";
 
-export type Props = {
+export interface IAccordionProps{
   title?: string
   content?: ReactNode
   bgcolor?: string
@@ -18,7 +18,7 @@ export type Props = {
 const Accordion = ({
   content, title, textcolor, titlecolor, bgheadercolor,
   bgcontentcolor, bordercolor
-}: Props) => {
+}: IAccordionProps) => {
 
   const [isActive, setIsActive] = useState(false);
 

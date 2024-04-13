@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { IButton} from '.'
+import { IButtonProps} from '.'
 
-export const Btn = styled(Link)<IButton>`
+export const Btn = styled(Link)<IButtonProps>`
   display: inline-block;
   color: ${(props) => props.textcolor ? props.textcolor : "#000"};
   width:${(props) => props.size && props.size};
@@ -21,7 +21,7 @@ export const Btn = styled(Link)<IButton>`
   }
 `
 
-export const BtnSubmit = styled(Btn).attrs({as: "button"})<IButton>`
+export const BtnSubmit = styled(Btn).attrs({as: "button"})<IButtonProps>`
   border: none;
   font-size: 18px;
 `

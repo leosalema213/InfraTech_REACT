@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const FullCss = createGlobalStyle`
+export const UxCss = createGlobalStyle`
   .container{
     max-width: 600px;
     witdh: 100%;

@@ -16,7 +16,7 @@ import course4 from '../../assets/section/courseUxUi.png'
 
 import SocialBar, { ISocial } from '../../components/SocialBar'
 import Section from '../../components/Section'
-import TeacherCard from '../../components/TeacherCard'
+import TeacherCard, { ITeacherProps } from '../../components/TeacherCard'
 import CourseCard from '../../components/CourseCard'
 import Form from '../../components/Form'
 import InputGroup from '../../components/InputGroup'
@@ -26,10 +26,10 @@ import Button from "../../components/Button";
 import P from "../../components/P";
 import FlexContainer from "../../components/FlexContainer";
 import GridContainer from "../../components/GridContainer";
-import ButtonHome from "../../components/ButtonHome";
+import ButtonHeader from "../../components/ButtonHeader";
 import Hr from "../../components/Hr";
+import { ILinkProps } from "../../components/Link";
 import LinkBar from "../../components/LinkBar";
-import { ILink } from "../../components/Link";
 
 const sociallist: ISocial[] = [
   {
@@ -42,7 +42,7 @@ const sociallist: ISocial[] = [
   }
 ]
 
-const footerLinks: ILink[] = [
+const footerLinks: ILinkProps[] = [
   {
     to: "/",
     color: "#ccc",
@@ -57,10 +57,31 @@ const footerLinks: ILink[] = [
   }
 ]
 
+const teachers: ITeacherProps[] = [
+  {
+
+    imageurl: professor1,
+    name: "Jaqueline Vitoria",
+    profession: "UX/UI Design",
+    description: "Olá eu sou a jaqueline tenho 20 anos, lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!"
+  },
+  {
+    imageurl: professor2,
+    name: "Mauricio Goldoni",
+    profession: "Desenvolvedor BackEnd",
+    description: "Olá eu sou o Mauricio tenho 21 anos, lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!"
+  },
+  {
+    imageurl: professor3,
+    name: "Leonardo Patrick",
+    profession: "Desenvolvedor FrontEnd",
+    description: "Olá eu sou o Leonardo tenho 21 anos, lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!"
+  }
+
+]
+
 
 export default function Home() {
-
-
   return (
     <>
       <Header
@@ -70,13 +91,15 @@ export default function Home() {
         justify="center"
         gap="20px" >
 
+
+
         <P color="#00a2ff" fsize="18px">formação online</P>
         <Heading level={1} content="Cursos Infratech" align='center' />
         <Heading
           level={2}
           align='center'
           content="Cursos profissinalizantes para o seu crescimento profissional." />
-        <ButtonHome
+        <ButtonHeader
           bgcolor="transparent"
           bgcolorhover="#00a2ff"
           textcolor="#00a2ff"
@@ -85,7 +108,7 @@ export default function Home() {
           content="Inscreva-se"
         />
         <SocialBar socialList={sociallist} />
-          
+
       </Header>
 
       <HeadingSection
@@ -101,7 +124,7 @@ export default function Home() {
             content="Sobre nós " />
           <Hr bordercolor='#00a2ff' />
           <FlexContainer flexsm="column" flexmd="row">
-            <img src={aboutimage} alt="" />
+            <img src={aboutimage} alt="about-img" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error omnis vitae veritatis beatae quibusdam ex aperiam. Architecto reiciendis asperiores odit harum, praesentium libero quibusdam possimus! Eniitatis beatae quibusdam ex aperiam,rum, praesentium libero quibusdam possimus! Eniitatis beatae quibusdam ex aperiam.
             </p>
@@ -119,28 +142,17 @@ export default function Home() {
 
           <Hr bordercolor='#00a2ff' />
           <GridContainer gridmd='3' gap="20px">
+            {teachers.map((item) =>
+              <TeacherCard
+                name={item.name}
+                description={item.description}
+                imageurl={item.imageurl}
+                key={item.name}
+                profession={item.profession}
+              />
+            )}
 
 
-            <TeacherCard
-              imageurl={professor1}
-              name="Jaqueline Vitoria"
-              profession="UX/UI Design"
-              description="Olá eu sou a jaqueline tenho 20 anos, lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!"
-            />
-
-            <TeacherCard
-              imageurl={professor2}
-              name="Mauricio Goldoni"
-              profession="Desenvolvedor BackEnd"
-              description="Olá eu sou o Mauricio tenho 21 anos, lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!"
-            />
-
-            <TeacherCard
-              imageurl={professor3}
-              name="Leonardo Patrick"
-              profession="Desenvolvedor FrontEnd"
-              description="Olá eu sou o Leonardo tenho 21 anos, lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!"
-            />
           </GridContainer>
         </div>
       </Section>
@@ -183,9 +195,9 @@ export default function Home() {
             orientation='reverse'
             to="uxui"
           />
-          
+
         </div>
-    
+
       </Section>
 
       <HeadingSection level={2} bgcolor='#421eaa' align='center'>
