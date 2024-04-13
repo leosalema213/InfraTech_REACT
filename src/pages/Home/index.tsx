@@ -28,9 +28,8 @@ import FlexContainer from "../../components/FlexContainer";
 import GridContainer from "../../components/GridContainer";
 import ButtonHome from "../../components/ButtonHome";
 import Hr from "../../components/Hr";
-
-
-
+import LinkBar from "../../components/LinkBar";
+import { ILink } from "../../components/Link";
 
 const sociallist: ISocial[] = [
   {
@@ -43,7 +42,25 @@ const sociallist: ISocial[] = [
   }
 ]
 
-const Home = () => {
+const footerLinks: ILink[] = [
+  {
+    to: "/",
+    color: "#ccc",
+    colorhover: "#fff",
+    content: 'Voltar para a home'
+  },
+  {
+    to: "/",
+    color: "#ccc",
+    colorhover: "#fff",
+    content: 'testando'
+  }
+]
+
+
+export default function Home() {
+
+
   return (
     <>
       <Header
@@ -149,12 +166,14 @@ const Home = () => {
             description='lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!'
             content='Saiba mais'
             orientation='reverse'
+            to="/backend"
           />
           <CourseCard
             coursename='Desenvolvedor Full Stack'
             imageurl={course3}
             description='lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!'
             content='Saiba mais'
+            to="/fullstack"
           />
           <CourseCard
             coursename='UX/UI Designer'
@@ -162,8 +181,11 @@ const Home = () => {
             description='lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!'
             content='Saiba mais'
             orientation='reverse'
+            to="uxui"
           />
+          
         </div>
+    
       </Section>
 
       <HeadingSection level={2} bgcolor='#421eaa' align='center'>
@@ -218,10 +240,9 @@ const Home = () => {
       </Section>
 
       <Footer bgcolor='#421eaa'>
+        <LinkBar links={footerLinks} />
         <p>© Todos os direitos reservados</p>
       </Footer>
     </>
   )
 }
-
-export default Home

@@ -3,7 +3,7 @@ import { Props } from '.'
 
 export const FooterContainer = styled.footer<Props>`
   display: flex;
-  background-color: ${(props) => (props.bgcolor ? props.bgcolor : '#fff')};
+  background: ${(props) => (props.bgcolor ? props.bgcolor : '#fff')};
   color: ${(props) => (props.textcolor ? props.textcolor : '#fff')};
   flex-direciton: column;
   justify-content: center;

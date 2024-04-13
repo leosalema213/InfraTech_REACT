@@ -14,6 +14,7 @@ export type Props = {
 
 const SocialBar = ({socialList}: Props) => {
 
+
   return (
     <S.Ul>
       {

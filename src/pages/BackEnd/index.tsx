@@ -1,7 +1,4 @@
-import { NavLink } from 'react-router-dom'
-import { useId } from 'react'
-
-import frontAnimation from "../../assets/animations/animationFrontEnd.svg"
+import backAniamtion from "../../assets/animations/animationBackEnd.svg"
 import P from "../../components/P"
 import Heading, { HeadingSection } from "../../components/Headings"
 import Section from "../../components/Section"
@@ -14,8 +11,9 @@ import InputGroup from "../../components/InputGroup"
 import Footer from "../../components/Footer"
 import Button from "../../components/Button"
 import Hr from "../../components/Hr"
-import { FrontCss } from './styles'
+import { BackCss } from './styles'
 import Link from "../../components/Link"
+import { useId } from "react"
 
 interface IContent {
   title: string
@@ -25,23 +23,23 @@ interface IContent {
 
 const accordionsItem: IContent[] = [
   {
-    title: "HTML | CSS",
+    title: "APIs e páginas geradas pelo servidor ",
     content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
   },
   {
-    title: "JavaScript | jQuery",
+    title: "Conceitos básicos e lógica de programação",
     content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
   },
   {
-    title: "React Js",
+    title: "Interfaces, heranças, composição e agregação",
     content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
   },
   {
-    title: "Versionamento de código",
+    title: "SQL",
     content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
   },
   {
-    title: "SASS | LESS",
+    title: "ORMS E JPA",
     content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga molestiae consequuntur atque. Nisi debitis modi mollitia nostrum tempore illo consectetur architecto ducimus numquam? Animi iste aliquam temporibus sapiente asperiores."
   },
 ]
@@ -66,25 +64,24 @@ const courseInfos: IContent[] = [
 ]
 
 
-export default function FrontEndPage() {
+export default function BackEndPage(){
 
   const id = useId()
 
   return (
     <>
-    
-      <FrontCss />
+      <BackCss />
       <header>
         <div className="content">
-          <P color="#0effff" fsize="1em">
+          <P color="#b2ee0d" fsize="1em">
             Garanta uma carreira de sucesso como
           </P>
 
-          <Heading level={1} fsize="1.8em" content="Desenvolvedor Front end" />
+          <Heading level={1} fsize="1.8em" content="Desenvolvedor Back end" />
 
 
           <div>
-            <P color="#0effff" fsize="1em">
+            <P color="#b2ee0d" fsize="1em">
               Para quem o curso é indicado?
             </P>
             <P color="#FFF" fsize="1em">
@@ -98,10 +95,10 @@ export default function FrontEndPage() {
             </P>
           </div>
         </div>
-        <img className="animation" src={frontAnimation} alt="" />
+        <img className="animation" src={backAniamtion} alt="" />
       </header>
 
-      <Section padding="60px 5.6vw" bgcolor="linear-gradient(180deg, #ee93cd9c, #552c65)">
+      <Section padding="60px 5.6vw" bgcolor="linear-gradient(180deg, #4ad295,#0c3a19)">
         <GridContainer gridmd="2" gridlg="4" gap="32px">
           {courseInfos.map((item) =>
           (
@@ -121,14 +118,14 @@ export default function FrontEndPage() {
       <Section>
 
         <div className="container">
-          <HeadingSection color="#552c65" align="center">
+          <HeadingSection color="#0c3a19" align="center">
             Oque você ira aprender
           </HeadingSection>
 
           {accordionsItem.map((item) => (
             <Accordion
               key={id}
-              titlecolor="#552c65"
+              titlecolor="#0c3a19"
               title={item.title}
               content={item.content}
             />
@@ -137,18 +134,18 @@ export default function FrontEndPage() {
 
       </Section>
 
-      <Hr bordercolor="#552c65" />
+      <Hr bordercolor="#0c3a19" />
 
       <Section margin="120px 0 0">
 
         <div className="container">
-          <Form bgcolor="#552c65" rounded="20px">
+          <Form bgcolor="#0c3a19" rounded="20px">
             <div>
               <P fweight="bold" color="#fff" fsize="24px">Inscreva-se agora</P>
               <P fweight="bold" color="#fff" fsize="18px">venha fazer parte do nosso time!</P>
             </div>
 
-            <Hr bordercolor='#00a2ff' />
+            <Hr bordercolor='#268b1d' />
 
             <InputGroup
               textlabelcolor="#fff"
@@ -171,8 +168,8 @@ export default function FrontEndPage() {
             </Select>
 
             <Button
-              bgcolor="#0779bb"
-              bgcolorhover="#00a2ff;"
+              bgcolor="#268b1d"
+              bgcolorhover="#48bd3d"
               textcolor="#fff"
               rounded="10px"
               size="100%"
@@ -184,7 +181,7 @@ export default function FrontEndPage() {
 
       </Section>
 
-      <Footer bgcolor='#552c65'>
+      <Footer bgcolor='#0c3a19'>
         <Link 
           to="/"
           color="#ccc"
@@ -192,7 +189,6 @@ export default function FrontEndPage() {
           content='Voltar para a home'
         />
         <P>© Todos os direitos reservados</P>
-        <NavLink to={'/'}>teste</NavLink>
       </Footer>
 
     </>

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { IButton} from '.'
 
-export const Btn = styled.a.attrs({as: Link})<IButton>`
+export const Btn = styled(Link)<IButton>`
   display: inline-block;
   color: ${(props) => props.textcolor ? props.textcolor : "#000"};
   width:${(props) => props.size && props.size};

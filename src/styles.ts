@@ -1,18 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const colors = {
-  white: '#EEEEEE',
-  black: '#111',
-  grey: '#333',
-  lightGrey: '#A3A3A3',
-  green: '#10AC84'
-}
-
-export const breakpoints = {
-  desktop: '1024px',
-  tablet: '768px'
-}
-
 export const GlobalCss = createGlobalStyle`
   * {
     margin: 0;

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const FrontCss = createGlobalStyle`
+export const FullCss = createGlobalStyle`
   .container{
     max-width: 600px;
     witdh: 100%;
@@ -10,7 +10,7 @@ export const FrontCss = createGlobalStyle`
   header{
     width: 100%;
     height: 100%;
-    background:linear-gradient(180deg, #552c65, #ee93cd9c);
+    background:linear-gradient(180deg, #AF2B03, #FD8719);
     background-position: center;
     background-size: cover;
     display: flex;

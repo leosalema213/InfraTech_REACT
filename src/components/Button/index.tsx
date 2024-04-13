@@ -28,7 +28,7 @@ export const Button = ({
   </S.BtnSubmit>
 
   }
-  return <S.Btn
+  return <S.Btn 
     type="button"
     to={to}
     size={size}
