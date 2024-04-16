@@ -2,7 +2,7 @@ import * as S from "./styles"
 export interface IInput {
   label?: string
   inputname?: string
-  inputtype: "text" | "tel" | "email" | "number"
+  inputtype?: "text" | "tel" | "email" | "number"
   border?: string
   textlabelcolor?: string
 }
