@@ -149,6 +149,7 @@ export default function BackEndPage() {
               inputname="name"
               inputtype="text" />
             <InputGroup
+              mask="(00) 00000-0000"
               textlabelcolor="#fff"
               label="Celular"
               inputname="cel"

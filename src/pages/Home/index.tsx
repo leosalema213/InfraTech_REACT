@@ -272,6 +272,7 @@ export default function Home() {
               border="1px solid #00a2ff"
             />
             <InputGroup
+              mask="(00) 00000-0000"
               label="Celular"
               inputname="cel"
               inputtype="tel"

@@ -5,25 +5,18 @@ export interface IInput {
   inputtype?: "text" | "tel" | "email" | "number"
   border?: string
   textlabelcolor?: string
+  mask?: string
 }
 
-const mask = (inputtype: string) => {
-  switch (inputtype) {
-    case "tel":
-      return "(00) 00000-0000"
-    default:
-      return ""
-  }
-}
 
 const InputGroup = ({
-  inputname, inputtype, label, border, textlabelcolor
+  inputname, inputtype, label, border, textlabelcolor, mask
 }: IInput) => {
 
   return (
     <S.Group>
       <S.Label textlabelcolor={textlabelcolor}>{label}
-        <S.Input mask={mask(inputtype)} required
+        <S.Input mask={mask} required
           type={inputtype} name={inputname}
           id={inputname} border={border}
         />
