@@ -1,10 +1,10 @@
 import { ReactNode, useState } from 'react'
 import * as S from './styles'
-import P from '../P'
+import P from '../Text'
 import { IoMdClose } from "react-icons/io";
 import { BiSolidDownArrow } from "react-icons/bi";
 
-export interface IAccordionProps{
+export interface IAccordionProps {
   title?: string
   content?: ReactNode
   bgcolor?: string
@@ -22,17 +22,9 @@ const Accordion = ({
 
   const [isActive, setIsActive] = useState(false);
 
-  const openAcordion = () => {
-    if (isActive == true) {
-      setIsActive(false)
-      return
-    }
-    setIsActive(true)
-  }
-
   return (
     <S.AccoridionContainer bordercolor={bordercolor} >
-      <S.AccordionHeader bgheadercolor={bgheadercolor} onClick={openAcordion} titlecolor={titlecolor} >
+      <S.AccordionHeader bgheadercolor={bgheadercolor} onClick={() => setIsActive(!isActive)} titlecolor={titlecolor} >
         <p>{title}</p>
 
         {isActive == true

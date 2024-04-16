@@ -8,14 +8,16 @@ export interface IButtoHeaderProps {
   bordercolor?: string
   textcolor?: string
   textcolorhover?: string
+  to?: string
 }
 
 export const ButtonHeader = ({
-  content, bgcolor, bgcolorhover, textcolor, bordercolor, textcolorhover
+  to, content, bgcolor, bgcolorhover, textcolor, bordercolor, textcolorhover
 }: IButtoHeaderProps) => {
   return <S.Button
-    bgcolor={bgcolor} bgcolorhover={bgcolorhover}
-    textcolor={textcolor} bordercolor={bordercolor} textcolorhover={textcolorhover}
+    to={to} bgcolor={bgcolor}
+    bgcolorhover={bgcolorhover} textcolor={textcolor}
+    bordercolor={bordercolor} textcolorhover={textcolorhover}
   >
     {content}
   </S.Button>

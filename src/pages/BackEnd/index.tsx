@@ -1,18 +1,19 @@
-import backAniamtion from "../../assets/animations/animationBackEnd.svg"
-import P from "../../components/P"
 import Heading, { HeadingSection } from "../../components/Headings"
+import P from "../../components/Text"
 import Section from "../../components/Section"
-import Card from "../../components/Card"
-import GridContainer from "../../components/GridContainer"
+import Card from "../../components/Cards/Card"
+import GridContainer from "../../components/Containers/GridContainer"
 import Accordion from "../../components/Accordion"
-import Form from "../../components/Form"
-import { Select } from "../../components/Select"
-import InputGroup from "../../components/InputGroup"
+import Form from "../../components/Formulario/Form"
+import InputGroup from "../../components/Formulario/InputGroup"
+import { Select } from "../../components/Formulario/Select"
+import Button from "../../components/Buttons/Button"
 import Footer from "../../components/Footer"
-import Button from "../../components/Button"
 import Hr from "../../components/Hr"
-import { BackCss } from './styles'
 import Link from "../../components/Link"
+
+import backAniamtion from "../../assets/animations/animationBackEnd.svg"
+import CourseHeader from "../../components/CourseHeader"
 
 interface IContent {
   title: string
@@ -63,12 +64,10 @@ const courseInfos: IContent[] = [
 ]
 
 
-export default function BackEndPage(){
-
+export default function BackEndPage() {
   return (
     <>
-      <BackCss />
-      <header>
+      <CourseHeader background="linear-gradient(180deg, #0c3a19, #4ad295)">
         <div className="content">
           <P color="#b2ee0d" fsize="1em">
             Garanta uma carreira de sucesso como
@@ -93,7 +92,7 @@ export default function BackEndPage(){
           </div>
         </div>
         <img className="animation" src={backAniamtion} alt="" />
-      </header>
+      </CourseHeader>
 
       <Section padding="60px 5.6vw" bgcolor="linear-gradient(180deg, #4ad295,#0c3a19)">
         <GridContainer gridmd="2" gridlg="4" gap="32px">
@@ -114,7 +113,7 @@ export default function BackEndPage(){
 
       <Section>
 
-        <div className="container">
+        <div className="container-md">
           <HeadingSection color="#0c3a19" align="center">
             Oque você ira aprender
           </HeadingSection>
@@ -135,7 +134,7 @@ export default function BackEndPage(){
 
       <Section margin="120px 0 0">
 
-        <div className="container">
+        <div className="container-md">
           <Form bgcolor="#0c3a19" rounded="20px">
             <div>
               <P fweight="bold" color="#fff" fsize="24px">Inscreva-se agora</P>
@@ -147,7 +146,7 @@ export default function BackEndPage(){
             <InputGroup
               textlabelcolor="#fff"
               label="Nome"
-              inputname="nome"
+              inputname="name"
               inputtype="text" />
             <InputGroup
               textlabelcolor="#fff"
@@ -160,8 +159,8 @@ export default function BackEndPage(){
               inputname="email"
               inputtype="email" />
 
-            <Select label='Curso de interesse' textlabelcolor="#fff">
-              <option  defaultValue="Desenvolvedor Front End" > Desenvolvedor Front End </option>
+            <Select selectname="course" label='Curso de interesse' textlabelcolor="#fff">
+              <option value="devback" > Desenvolvedor Back End </option>
             </Select>
 
             <Button
@@ -179,7 +178,7 @@ export default function BackEndPage(){
       </Section>
 
       <Footer bgcolor='#0c3a19'>
-        <Link 
+        <Link
           to="/"
           color="#ccc"
           colorhover="#fff"

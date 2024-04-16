@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
-import Button from "../Button"
-import Heading from "../Headings"
+import Button from "../../Buttons/Button"
+import Heading from "../../Headings"
 import * as S from "./styles"
 
 export interface ICourseProps {

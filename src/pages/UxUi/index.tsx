@@ -1,18 +1,19 @@
-import uxUiAnimation from "../../assets/animations/animationUxUi.svg"
-import P from "../../components/P"
+import P from "../../components/Text"
 import Heading, { HeadingSection } from "../../components/Headings"
 import Section from "../../components/Section"
-import Card from "../../components/Card"
-import GridContainer from "../../components/GridContainer"
+import Card from "../../components/Cards/Card"
+import GridContainer from "../../components/Containers/GridContainer"
 import Accordion from "../../components/Accordion"
-import Form from "../../components/Form"
-import { Select } from "../../components/Select"
-import InputGroup from "../../components/InputGroup"
+import Form from "../../components/Formulario/Form"
+import { Select } from "../../components/Formulario/Select"
+import InputGroup from "../../components/Formulario/InputGroup"
 import Footer from "../../components/Footer"
-import Button from "../../components/Button"
+import Button from "../../components/Buttons/Button"
 import Hr from "../../components/Hr"
 import Link from "../../components/Link"
-import { UxCss } from "./styles"
+
+import uxUiAnimation from "../../assets/animations/animationUxUi.svg"
+import CourseHeader from "../../components/CourseHeader"
 
 interface IContent {
   title: string
@@ -59,13 +60,12 @@ const courseInfos: IContent[] = [
 ]
 
 
-export default function UxUiPage()  {
+export default function UxUiPage() {
 
 
   return (
     <>
-      <UxCss />
-      <header className="overlay">
+      <CourseHeader background="linear-gradient(180deg, #3a0436, #f890f1)">
         <div className="content">
           <P color="#ff70f5" fsize="1em">
             Garanta uma carreira de sucesso como
@@ -90,9 +90,7 @@ export default function UxUiPage()  {
           </div>
         </div>
         <img className="animation" src={uxUiAnimation} alt="" />
-      </header>
-
-      
+      </CourseHeader>
 
       <Section padding="60px 5.6vw" bgcolor="linear-gradient(180deg, #f890f1, #3a0436)">
         <GridContainer gridmd="2" gridlg="4" gap="32px">
@@ -112,8 +110,8 @@ export default function UxUiPage()  {
       </Section >
 
       <Section>
+        <div className="container-md">
 
-        <div className="container">
           <HeadingSection color="#3a0436" align="center">
             Oque você ira aprender
           </HeadingSection>
@@ -126,15 +124,15 @@ export default function UxUiPage()  {
               content={item.content}
             />
           ))}
-        </div>
 
+        </div>
       </Section>
 
       <Hr bordercolor="#3a0436" />
 
       <Section margin="120px 0 0">
+        <div className="container-md">
 
-        <div className="container">
           <Form bgcolor="#3a0436" rounded="20px">
             <div>
               <P fweight="bold" color="#fff" fsize="24px">Inscreva-se agora</P>
@@ -146,7 +144,7 @@ export default function UxUiPage()  {
             <InputGroup
               textlabelcolor="#fff"
               label="Nome"
-              inputname="nome"
+              inputname="name"
               inputtype="text" />
             <InputGroup
               textlabelcolor="#fff"
@@ -159,8 +157,8 @@ export default function UxUiPage()  {
               inputname="email"
               inputtype="email" />
 
-            <Select label='Curso de interesse' textlabelcolor="#fff">
-              <option  defaultValue="Desenvolvedor Front End" > Desenvolvedor Front End </option>
+            <Select selectname="course" label='Curso de interesse' textlabelcolor="#fff">
+              <option value="UX/UI Designer" > Desenvolvedor Front End </option>
             </Select>
 
             <Button
@@ -173,12 +171,12 @@ export default function UxUiPage()  {
               content="Inscreva-se"
             />
           </Form >
-        </div >
 
+        </div >
       </Section>
 
       <Footer bgcolor='#3a0436'>
-        <Link 
+        <Link
           to="/"
           color="#ccc"
           colorhover="#fff"

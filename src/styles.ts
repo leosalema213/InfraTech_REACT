@@ -8,20 +8,21 @@ export const GlobalCss = createGlobalStyle`
     font-family: Roboto, sans-serif;
     list-style: none;
   }
-  
+
   .container{
     max-width: 960px;
-    witdh: 100%;
+    width: 100%;
     margin: 0 auto;
-
-    p {
-      line-height: 26px;
-    }
   }
 
   .container-md {
-    max-width: 700px;
-    witdh: 100%;
+    max-width: 600px;
+    width: 100%;
     margin: 0 auto;
   }
+  
+.optionDefault {
+ display: none;
+}
+
 `

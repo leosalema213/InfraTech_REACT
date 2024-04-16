@@ -1,18 +1,20 @@
-import fullAnimation from "../../assets/animations/animationFullStack.svg"
-import P from "../../components/P"
+import P from "../../components/Text"
 import Heading, { HeadingSection } from "../../components/Headings"
 import Section from "../../components/Section"
-import Card from "../../components/Card"
-import GridContainer from "../../components/GridContainer"
+import Card from "../../components/Cards/Card"
+import GridContainer from "../../components/Containers/GridContainer"
 import Accordion from "../../components/Accordion"
-import Form from "../../components/Form"
-import { Select } from "../../components/Select"
-import InputGroup from "../../components/InputGroup"
+import Form from "../../components/Formulario/Form"
+import { Select } from "../../components/Formulario/Select"
+import InputGroup from "../../components/Formulario/InputGroup"
 import Footer from "../../components/Footer"
-import Button from "../../components/Button"
+import Button from "../../components/Buttons/Button"
 import Hr from "../../components/Hr"
-import {FullCss} from './styles'
 import Link from "../../components/Link"
+
+import fullAnimation from "../../assets/animations/animationFullStack.svg"
+import CourseHeader from "../../components/CourseHeader"
+
 
 interface IContent {
   title: string
@@ -83,12 +85,12 @@ const courseInfos: IContent[] = [
 ]
 
 
-export default function FullStackPage()  {
+export default function FullStackPage() {
 
   return (
     <>
-      <FullCss />
-      <header className="overlay">
+
+      <CourseHeader background="linear-gradient(180deg, #AF2B03, #FD8719)" >
         <div className="content">
           <P color="#ffa707" fsize="1em">
             Garanta uma carreira de sucesso como
@@ -113,9 +115,9 @@ export default function FullStackPage()  {
           </div>
         </div>
         <img className="animation" src={fullAnimation} alt="" />
-      </header>
+      </CourseHeader>
 
-      
+
 
       <Section padding="60px 5.6vw" bgcolor="linear-gradient(180deg, #FD8719, #AF2B03)">
         <GridContainer gridmd="2" gridlg="4" gap="32px">
@@ -136,7 +138,7 @@ export default function FullStackPage()  {
 
       <Section>
 
-        <div className="container">
+        <div className="container-md">
           <HeadingSection color="#af2b03" align="center">
             Oque você ira aprender
           </HeadingSection>
@@ -157,7 +159,7 @@ export default function FullStackPage()  {
 
       <Section margin="120px 0 0">
 
-        <div className="container">
+        <div className="container-md">
           <Form bgcolor="#af2b03" rounded="20px">
             <div>
               <P fweight="bold" color="#fff" fsize="24px">Inscreva-se agora</P>
@@ -169,7 +171,7 @@ export default function FullStackPage()  {
             <InputGroup
               textlabelcolor="#fff"
               label="Nome"
-              inputname="nome"
+              inputname="name"
               inputtype="text" />
             <InputGroup
               textlabelcolor="#fff"
@@ -182,8 +184,8 @@ export default function FullStackPage()  {
               inputname="email"
               inputtype="email" />
 
-            <Select label='Curso de interesse' textlabelcolor="#fff">
-              <option  defaultValue="Desenvolvedor Front End" > Desenvolvedor Front End </option>
+            <Select selectname="course" label='Curso de interesse' textlabelcolor="#fff">
+              <option value="fullstack" > Desenvolvedor Full Stack </option>
             </Select>
 
             <Button
@@ -201,7 +203,7 @@ export default function FullStackPage()  {
       </Section>
 
       <Footer bgcolor='#af2b03'>
-        <Link 
+        <Link
           to="/"
           color="#ccc"
           colorhover="#fff"

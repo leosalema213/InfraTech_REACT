@@ -1,8 +1,24 @@
 import { TbDiscount2 } from "react-icons/tb";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-import Header from "../../components/Header";
+import Header from "../../components/HomeHeader";
 import Heading, { HeadingSection } from '../../components/Headings'
+import SocialBar, { ISocial } from '../../components/SocialBar'
+import Section from '../../components/Section'
+import TeacherCard, { ITeacherProps } from '../../components/Cards/TeacherCard'
+import CourseCard, { ICourseProps } from '../../components/Cards/CourseCard'
+import Form from '../../components/Formulario/Form'
+import InputGroup from '../../components/Formulario/InputGroup'
+import Select from '../../components/Formulario/Select'
+import Footer from "../../components/Footer";
+import Button from "../../components/Buttons/Button";
+import P from "../../components/Text";
+import FlexContainer from "../../components/Containers/FlexContainer";
+import GridContainer from "../../components/Containers/GridContainer";
+import ButtonHeader from "../../components/Buttons/ButtonHeader";
+import Hr from "../../components/Hr";
+import { ILinkProps } from "../../components/Link";
+import Links from "../../components/Links";
 
 import backgroundHome from '../../assets/backgrounds/home.jpg'
 import aboutimage from '../../assets/section/about.png'
@@ -13,23 +29,7 @@ import course1 from '../../assets/section/courseFront.png'
 import course2 from '../../assets/section/courseBack.png'
 import course3 from '../../assets/section/courseFull.png'
 import course4 from '../../assets/section/courseUxUi.png'
-
-import SocialBar, { ISocial } from '../../components/SocialBar'
-import Section from '../../components/Section'
-import TeacherCard, { ITeacherProps } from '../../components/TeacherCard'
-import CourseCard from '../../components/CourseCard'
-import Form from '../../components/Form'
-import InputGroup from '../../components/InputGroup'
-import Select from '../../components/Select'
-import Footer from "../../components/Footer";
-import Button from "../../components/Button";
-import P from "../../components/P";
-import FlexContainer from "../../components/FlexContainer";
-import GridContainer from "../../components/GridContainer";
-import ButtonHeader from "../../components/ButtonHeader";
-import Hr from "../../components/Hr";
-import { ILinkProps } from "../../components/Link";
-import LinkBar from "../../components/LinkBar";
+import StartTime from "../../utils/StartTime";
 
 const sociallist: ISocial[] = [
   {
@@ -50,10 +50,28 @@ const footerLinks: ILinkProps[] = [
     content: 'Voltar para a home'
   },
   {
-    to: "/",
+    to: "/frontend",
     color: "#ccc",
     colorhover: "#fff",
-    content: 'testando'
+    content: 'Curso FrontEnd'
+  },
+  {
+    to: "/backend",
+    color: "#ccc",
+    colorhover: "#fff",
+    content: 'Curso BackEnd'
+  },
+  {
+    to: "/fullstack",
+    color: "#ccc",
+    colorhover: "#fff",
+    content: 'Curso FullStack'
+  },
+  {
+    to: "/uxui",
+    color: "#ccc",
+    colorhover: "#fff",
+    content: 'Curso UI/UX'
   }
 ]
 
@@ -80,8 +98,44 @@ const teachers: ITeacherProps[] = [
 
 ]
 
+const courses: ICourseProps[] = [
+  {
+    coursename: "Desenvolvedor Front End",
+    imageurl: course1,
+    description: 'lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!',
+    content: 'Saiba mais',
+    to: "frontend"
+  },
+  {
+    coursename: 'Desenvolvedor Back End',
+    imageurl: course2,
+    description: 'lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!',
+    content: 'Saiba mais',
+    orientation: 'reverse',
+    to: "/backend"
+  },
+  {
+    coursename: 'Desenvolvedor Full Stack',
+    imageurl: course3,
+    description: 'lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!',
+    content: 'Saiba mais',
+    to: "/fullstack"
+  },
+  {
+    coursename: 'UX/UI Designer',
+    imageurl: course4,
+    description: 'lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!',
+    content: 'Saiba mais',
+    orientation: 'reverse',
+    to: "uxui"
+  }
+]
+
 
 export default function Home() {
+
+  const [minutes, seconds] = StartTime(60)
+
   return (
     <>
       <Header
@@ -92,14 +146,20 @@ export default function Home() {
         gap="20px" >
 
 
-
         <P color="#00a2ff" fsize="18px">formação online</P>
-        <Heading level={1} content="Cursos Infratech" align='center' />
+
+        <Heading
+          level={1}
+          content="Cursos Infratech"
+          align='center' />
+
         <Heading
           level={2}
           align='center'
           content="Cursos profissinalizantes para o seu crescimento profissional." />
+
         <ButtonHeader
+          to="#HomeForm"
           bgcolor="transparent"
           bgcolorhover="#00a2ff"
           textcolor="#00a2ff"
@@ -107,6 +167,7 @@ export default function Home() {
           textcolorhover="#fff"
           content="Inscreva-se"
         />
+
         <SocialBar socialList={sociallist} />
 
       </Header>
@@ -116,31 +177,37 @@ export default function Home() {
         align='center'
         content="Cursos profissinalizantes para o seu crescimento profissional."
       />
+
       <Section margin="40px 0"> {/* About */}
-        <div className="container">
+        <div className="container" >
+
           <Heading
             level={2}
             color='#000'
             content="Sobre nós " />
+
           <Hr bordercolor='#00a2ff' />
+
           <FlexContainer flexsm="column" flexmd="row">
             <img src={aboutimage} alt="about-img" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error omnis vitae veritatis beatae quibusdam ex aperiam. Architecto reiciendis asperiores odit harum, praesentium libero quibusdam possimus! Eniitatis beatae quibusdam ex aperiam,rum, praesentium libero quibusdam possimus! Eniitatis beatae quibusdam ex aperiam.
             </p>
           </FlexContainer>
-        </div>
 
+        </div>
       </Section>
 
       <Section> {/* teachers */}
         <div className="container">
+
           <HeadingSection
             align="center"
             bgcolor='#00a2ff'
             content="Nossos Professores" />
 
           <Hr bordercolor='#00a2ff' />
+
           <GridContainer gridmd='3' gap="20px">
             {teachers.map((item) =>
               <TeacherCard
@@ -151,62 +218,45 @@ export default function Home() {
                 profession={item.profession}
               />
             )}
-
-
           </GridContainer>
+
         </div>
       </Section>
 
       <Section> {/* courses */}
         <div className="container">
+
           <HeadingSection
             align="center"
             bgcolor='#00a2ff'
             content=" Nossos Cursos" />
+
           <Hr bordercolor='#00a2ff' />
 
-          <CourseCard
-            coursename='Desenvolvedor Front End'
-            imageurl={course1}
-            description='lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!'
-            content='Saiba mais'
-            to="frontend"
-          />
-          <CourseCard
-            coursename='Desenvolvedor Back End'
-            imageurl={course2}
-            description='lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!'
-            content='Saiba mais'
-            orientation='reverse'
-            to="/backend"
-          />
-          <CourseCard
-            coursename='Desenvolvedor Full Stack'
-            imageurl={course3}
-            description='lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!'
-            content='Saiba mais'
-            to="/fullstack"
-          />
-          <CourseCard
-            coursename='UX/UI Designer'
-            imageurl={course4}
-            description='lorem ipsum dolor sit amet consectetur ipisicing elit. Minima amet tenetur cum beatae velit laborum illum est voluptatum. Quidem modi accusantium quibusdam nihil molestiae deleniti amet nostrum omnis ad magnam!'
-            content='Saiba mais'
-            orientation='reverse'
-            to="uxui"
-          />
+          {courses.map((course) => (
+            <CourseCard
+              orientation={course.orientation}
+              key={course.coursename}
+              coursename={course.coursename}
+              imageurl={course.imageurl}
+              description={course.description}
+              content={course.content}
+              to={course.to} />
+          ))}
 
         </div>
-
       </Section>
 
       <HeadingSection level={2} bgcolor='#421eaa' align='center'>
-        <TbDiscount2 color="#00a2ff" size="22px" />
-        Desconto disponivel por
+        <P color="#fff">
+          <TbDiscount2 color="#00a2ff" size="22px" />
+          {`Desconto disponivel por  00:${minutes}:${seconds}`}
+        </P>
       </HeadingSection>
 
-      <Section margin="60px 0 0"> {/* Form */}
+      <Section id="HomeForm" margin="60px 0 0"> {/* Form */}
         <div className="container-md">
+
           <Form >
             <Heading
               level={3}
@@ -217,27 +267,31 @@ export default function Home() {
 
             <InputGroup
               label="Nome"
-              inputname="nome"
+              inputname="name"
               inputtype="text"
-              border="1px solid #00a2ff" />
+              border="1px solid #00a2ff"
+            />
             <InputGroup
               label="Celular"
               inputname="cel"
               inputtype="tel"
-              border="1px solid #00a2ff" />
+              border="1px solid #00a2ff"
+            />
             <InputGroup
               label="Email"
               inputname="email"
               inputtype="email"
-              border="1px solid #00a2ff" />
+              border="1px solid #00a2ff"
+            />
 
-            <Select label='Curso de interesse' border="1px solid #00a2ff">
-              <option defaultValue="valor default" />
-              <option value="teste">Desenvolvedor Front End</option>
-              <option value="teste">Desenvolvedor Back End</option>
-              <option value="teste">Desenvolvedor Full Stack Java</option>
-              <option value="teste">UX/UI Designer</option>
+            <Select selectname="course" label='Curso de interesse' border="1px solid #00a2ff" >
+              <option className="optionDefault" defaultValue="valor default" />
+              <option value="devfront">Desenvolvedor Front End</option>
+              <option value="devback">Desenvolvedor Back End</option>
+              <option value="fullstack">Desenvolvedor Full Stack Java</option>
+              <option value="uxui">UX/UI Designer</option>
             </Select>
+
             <Button
               bgcolor="#0779bb"
               bgcolorhover="#00a2ff;"
@@ -248,12 +302,13 @@ export default function Home() {
               content="Inscreva-se"
             />
           </Form >
+
         </div >
       </Section>
 
       <Footer bgcolor='#421eaa'>
-        <LinkBar links={footerLinks} />
-        <p>© Todos os direitos reservados</p>
+        <Links links={footerLinks} />
+        <P>© Todos os direitos reservados</P>
       </Footer>
     </>
   )

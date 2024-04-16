@@ -7,13 +7,14 @@ export interface ISelectProps {
   border?: string
   label?: string
   textlabelcolor?: string
+  selectname?: string
 }
 
-export const Select = ({ children, border, label, textlabelcolor }: ISelectProps) => {
+export const Select = ({ children, border, label, textlabelcolor, selectname }: ISelectProps) => {
   return (
     <Label textlabelcolor={textlabelcolor}>
       {label}
-      <S.Select border={border}>
+      <S.Select name={selectname} required border={border}>
         {children}
       </S.Select>
     </Label>

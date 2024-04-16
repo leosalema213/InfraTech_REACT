@@ -5,7 +5,7 @@ export interface ILinkBarProps {
   links: ILinkProps[]
 }
 
-const LinkBar = ({ links }: ILinkBarProps) => {
+const Links = ({ links }: ILinkBarProps) => {
 
   
 
@@ -27,4 +27,4 @@ const LinkBar = ({ links }: ILinkBarProps) => {
   )
 }
 
-export default LinkBar
+export default Links

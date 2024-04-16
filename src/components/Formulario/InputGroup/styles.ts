@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { IMaskInput } from "react-imask"
+
 import { IInput } from '.'
 
 
@@ -7,7 +9,7 @@ export const Group = styled.div`
   flex-direction: column;
 `
 
-export const Input = styled.input<IInput>`
+export const Input = styled(IMaskInput)<IInput>`
   width: 100%;
   padding: 6px 8px;
   border-radius: 12px;
